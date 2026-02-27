@@ -37,33 +37,33 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-32 relative z-10">
-      <div className="container mx-auto px-4 md:px-8">
-        
+    <section className="py-20 md:py-32 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
+
         {/* Header */}
-        <div className="text-center mb-20">
-          <motion.div 
+        <div className="text-center mb-12 md:mb-20">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-sm font-medium mb-6 text-[#3b82f6] tracking-wide uppercase"
+            className="inline-block bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-sm font-medium mb-5 sm:mb-6 text-[#3b82f6] tracking-wide uppercase"
           >
             Why Choose Us
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight text-white"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight text-white"
           >
-            Why Businesses Trust <br />
+            Why Businesses Trust <br className="hidden sm:block" />
             <span className="text-[#3b82f6] font-display italic font-normal">Our Expertise</span>
           </motion.h2>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {reasons.map((reason, index) => (
             <motion.div
               key={index}
@@ -71,7 +71,7 @@ export default function WhyChooseUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="group bg-white/5 border border-white/10 p-8 rounded-[32px] hover:bg-white/10 hover:border-[#3b82f6]/30 transition-all duration-300 relative overflow-hidden"
+              className="group bg-white/5 border border-white/10 p-5 sm:p-6 md:p-8 rounded-[32px] hover:bg-white/10 hover:border-[#3b82f6]/30 transition-all duration-300 relative overflow-hidden"
             >
               <div className="w-12 h-12 rounded-2xl bg-[#3b82f6]/10 flex items-center justify-center mb-6 group-hover:bg-[#3b82f6] transition-colors duration-300">
                 <reason.icon className="text-[#3b82f6] w-6 h-6 group-hover:text-white transition-colors duration-300" />

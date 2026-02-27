@@ -6,7 +6,7 @@ export default function VideoShowcase() {
   const containerRef = useRef(null);
 
   return (
-    <section ref={containerRef} className="py-32 relative overflow-hidden bg-[#0a0a0a]">
+    <section ref={containerRef} className="py-20 md:py-32 relative overflow-hidden bg-[#0a0a0a]">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl opacity-20 pointer-events-none">
@@ -15,34 +15,34 @@ export default function VideoShowcase() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-4xl mx-auto mb-16">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="text-center max-w-4xl mx-auto mb-10 md:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-sm font-medium mb-6 text-[#3b82f6] tracking-wide uppercase"
+            className="inline-block bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-sm font-medium mb-5 sm:mb-6 text-[#3b82f6] tracking-wide uppercase"
           >
             What Sets Us Apart
           </motion.div>
-          
+
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-white"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold mb-5 sm:mb-6 leading-tight text-white"
           >
-            Why Wixford? Because Your <br />
+            Why Wixford? Because Your <br className="hidden sm:block" />
             <span className="text-[#3b82f6] font-display italic font-normal">Growth Is Our Mission</span>
           </motion.h2>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+            className="text-gray-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
           >
             Discover how Wixford builds scalable digital products that empower businesses to grow faster, smarter, and stronger.
           </motion.p>
@@ -83,14 +83,14 @@ export default function VideoShowcase() {
                 </div>
 
                 {/* Bottom Content Overlay */}
-                <div className="absolute bottom-0 left-0 w-full p-8 md:p-12 flex flex-col md:flex-row justify-between items-end gap-6 z-20">
+                <div className="absolute bottom-0 left-0 w-full p-4 sm:p-8 md:p-12 flex flex-col md:flex-row justify-between items-end gap-4 sm:gap-6 z-20">
                     <div>
-                        <div className="flex flex-wrap gap-3 mb-4">
-                            <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium border border-white/10 text-white">Mobile Apps</span>
-                            <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium border border-white/10 text-white">Web Platforms</span>
-                            <span className="px-3 py-1 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium border border-white/10 text-white">UI/UX</span>
+                        <div className="flex flex-wrap gap-2 sm:gap-3 mb-3 sm:mb-4">
+                            <span className="px-2 py-1 sm:px-3 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium border border-white/10 text-white">Mobile Apps</span>
+                            <span className="px-2 py-1 sm:px-3 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium border border-white/10 text-white">Web Platforms</span>
+                            <span className="px-2 py-1 sm:px-3 bg-white/10 backdrop-blur-sm rounded-full text-xs font-medium border border-white/10 text-white">UI/UX</span>
                         </div>
-                        <h3 className="text-2xl md:text-3xl font-bold text-white">Engineering Digital Excellence</h3>
+                        <h3 className="text-lg sm:text-2xl md:text-3xl font-bold text-white">Engineering Digital Excellence</h3>
                     </div>
                     <div className="text-right hidden md:block">
                         <p className="text-sm text-gray-400 font-mono tracking-wider">EST. 2020</p>

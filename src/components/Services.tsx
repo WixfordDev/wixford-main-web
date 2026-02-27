@@ -10,12 +10,12 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 bg-white text-black rounded-3xl mx-4 my-10">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16">
+    <section className="py-14 md:py-20 bg-white text-black rounded-3xl mx-2 sm:mx-4 my-6 sm:my-10">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-16">
            <div>
              <div className="inline-block bg-black text-white px-4 py-1 rounded-full text-sm font-medium mb-4">Our Expertise</div>
-             <h2 className="text-4xl md:text-6xl font-bold max-w-2xl">
+             <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold max-w-2xl">
                End-to-End Technology <span className="text-[#3b82f6]">Services</span> for Scalable Growth
              </h2>
            </div>
@@ -24,14 +24,14 @@ export default function Services() {
            </a>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {services.map((service, index) => (
-            <div key={index} className="group border-t border-black/10 pt-8 hover:bg-gray-50 transition-colors p-6 rounded-2xl" style={{ willChange: 'background-color' }}>
-              <div className="flex justify-between items-start mb-4">
-                <h3 className="text-2xl font-bold">{service.title}</h3>
-                <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-opacity text-[#3b82f6]" size={24} />
+            <div key={index} className="group border-t border-black/10 pt-6 hover:bg-gray-50 transition-colors p-4 sm:p-6 rounded-2xl" style={{ willChange: 'background-color' }}>
+              <div className="flex justify-between items-start mb-3 sm:mb-4">
+                <h3 className="text-xl sm:text-2xl font-bold">{service.title}</h3>
+                <ArrowUpRight className="opacity-0 group-hover:opacity-100 transition-opacity text-[#3b82f6] flex-shrink-0" size={24} />
               </div>
-              <p className="text-gray-600 text-lg">{service.description}</p>
+              <p className="text-gray-600 text-base sm:text-lg">{service.description}</p>
             </div>
           ))}
         </div>

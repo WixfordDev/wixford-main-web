@@ -41,32 +41,32 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-24 bg-white text-black rounded-[40px] mx-4 my-10 relative z-10">
-      <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-        
+    <section className="py-16 md:py-24 bg-white text-black rounded-[40px] mx-2 sm:mx-4 my-6 sm:my-10 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-4xl">
+
         {/* Header */}
-        <div className="text-center mb-16">
-          <motion.div 
+        <div className="text-center mb-10 md:mb-16">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block bg-black text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6 tracking-wide uppercase"
+            className="inline-block bg-black text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 sm:mb-6 tracking-wide uppercase"
           >
             FAQ
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
           >
             Common Questions & <span className="text-[#3b82f6] font-display italic font-normal">Answers</span>
           </motion.h2>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-2 sm:space-y-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -76,18 +76,18 @@ export default function FAQ() {
               transition={{ delay: index * 0.05 }}
               className="border-b border-gray-200"
             >
-              <button 
+              <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex justify-between items-center py-6 text-left group focus:outline-none"
+                className="w-full flex justify-between items-center py-4 sm:py-6 text-left group focus:outline-none"
               >
-                <span className={`text-xl md:text-2xl font-bold transition-colors duration-300 ${openIndex === index ? 'text-[#3b82f6]' : 'group-hover:text-[#3b82f6]'}`}>
+                <span className={`text-base sm:text-lg md:text-xl lg:text-2xl font-bold transition-colors duration-300 pr-4 ${openIndex === index ? 'text-[#3b82f6]' : 'group-hover:text-[#3b82f6]'}`}>
                   {faq.question}
                 </span>
-                <span className={`flex-shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ml-4 ${openIndex === index ? 'bg-[#3b82f6] border-[#3b82f6] text-white rotate-180' : 'border-gray-300 group-hover:border-[#3b82f6] group-hover:text-[#3b82f6]'}`}>
-                  {openIndex === index ? <Minus size={20} /> : <Plus size={20} />}
+                <span className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center transition-all duration-300 ml-2 sm:ml-4 ${openIndex === index ? 'bg-[#3b82f6] border-[#3b82f6] text-white rotate-180' : 'border-gray-300 group-hover:border-[#3b82f6] group-hover:text-[#3b82f6]'}`}>
+                  {openIndex === index ? <Minus size={16} /> : <Plus size={16} />}
                 </span>
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
@@ -97,7 +97,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="text-gray-600 text-lg leading-relaxed pb-8 pr-12">
+                    <p className="text-gray-600 text-base sm:text-lg leading-relaxed pb-6 sm:pb-8 pr-4 sm:pr-12">
                       {faq.answer}
                     </p>
                   </motion.div>

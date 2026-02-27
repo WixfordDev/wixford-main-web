@@ -21,18 +21,18 @@ export default function AboutPage() {
       `}</style>
 
       {/* HERO SECTION */}
-      <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden pt-20">
+      <section className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 overflow-hidden pt-16 sm:pt-20">
         <div className="absolute inset-0 w-full h-full z-0">
             <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-40 hero-video-mask">
                 <source src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9%2F674238984b5b15db637f4a63_-60bc-4584-9ad6-9caa931f8372-transcode.mp4" type="video/mp4" />
             </video>
         </div>
 
-        <div className="relative z-10 max-w-4xl mt-20">
-           <nav className="flex justify-center gap-2 mb-8 text-sm text-gray-500 font-light">
+        <div className="relative z-10 max-w-4xl mt-12 sm:mt-20">
+           <nav className="flex justify-center gap-2 mb-6 sm:mb-8 text-sm text-gray-500 font-light">
             <Link href="/" className="hover:text-white transition">Home</Link> <span>/</span> <span className="text-white">About us</span>
           </nav>
-          <h1 className="text-6xl md:text-8xl font-bold leading-none mb-12">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-none mb-8 sm:mb-12">
             <span className="block overflow-hidden">
               <motion.span
                 initial={{ y: "100%" }}
@@ -60,8 +60,8 @@ export default function AboutPage() {
         </div>
 
         {/* HORIZONTAL IMAGE MARQUEE */}
-        <div className="w-full overflow-hidden mt-12 relative z-10">
-          <div className="flex animate-marquee gap-6 w-max hover:[animation-play-state:paused]" style={{ willChange: 'transform' }}>
+        <div className="w-full overflow-hidden mt-8 sm:mt-12 relative z-10">
+          <div className="flex animate-marquee gap-3 sm:gap-6 w-max hover:[animation-play-state:paused]" style={{ willChange: 'transform' }}>
             {[1, 2, 3, 4].map((set) => (
                 <React.Fragment key={set}>
                     <motion.div
@@ -70,7 +70,7 @@ export default function AboutPage() {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/6816dbec97d1a7046e191a44_a0dd450072c5388a239c2d54d1345710_about_photo%2003.avif" className="h-64 rounded-3xl object-cover" alt="Team 1" />
+                        <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/6816dbec97d1a7046e191a44_a0dd450072c5388a239c2d54d1345710_about_photo%2003.avif" className="h-40 sm:h-52 md:h-64 rounded-2xl sm:rounded-3xl object-cover" alt="Team 1" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -78,7 +78,7 @@ export default function AboutPage() {
                         transition={{ duration: 0.8, delay: 0.1 }}
                         viewport={{ once: true }}
                     >
-                        <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/6816dbec00128582f247afee_f6b872681a7b875b4a7bb6f4384ea770_about_photo%2002.avif" className="h-64 rounded-3xl object-cover" alt="Team 2" />
+                        <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/6816dbec00128582f247afee_f6b872681a7b875b4a7bb6f4384ea770_about_photo%2002.avif" className="h-40 sm:h-52 md:h-64 rounded-2xl sm:rounded-3xl object-cover" alt="Team 2" />
                     </motion.div>
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -86,7 +86,7 @@ export default function AboutPage() {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/6816dbedce49b69b94e57e2f_1b3de29a30cad159dc0830689e6c7b4e_about_photo%2001.avif" className="h-64 rounded-3xl object-cover" alt="Team 3" />
+                        <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/6816dbedce49b69b94e57e2f_1b3de29a30cad159dc0830689e6c7b4e_about_photo%2001.avif" className="h-40 sm:h-52 md:h-64 rounded-2xl sm:rounded-3xl object-cover" alt="Team 3" />
                     </motion.div>
                 </React.Fragment>
             ))}
@@ -95,16 +95,16 @@ export default function AboutPage() {
       </section>
 
       {/* WHO WE ARE SECTION */}
-      <section className="bg-white text-black rounded-t-[40px] py-24 relative z-20 -mt-10">
-        <div className="max-w-[1252px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
+      <section className="bg-white text-black rounded-t-[40px] py-16 md:py-24 relative z-20 -mt-10">
+        <div className="max-w-[1252px] mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
+          <div className="space-y-5 sm:space-y-8">
             <span className="bg-blue-100 text-[#3b82f6] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">A Global Collective of Tech Visionaries</span>
-            <h2 className="text-5xl font-bold leading-tight">
-              Your Strategic Partner for <br />
-              <span className="text-[#3b82f6] italic font-display font-normal">Scalable Digital Products</span> <br />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
+              Your Strategic Partner for <br className="hidden sm:block" />
+              <span className="text-[#3b82f6] italic font-display font-normal">Scalable Digital Products</span> <br className="hidden sm:block" />
               that drive market leadership.
             </h2>
-            <button className="bg-black text-white px-10 py-5 rounded-2xl flex items-center group font-bold hover:bg-[#3b82f6] transition-colors">
+            <button className="bg-black text-white px-7 py-4 sm:px-10 sm:py-5 rounded-2xl flex items-center group font-bold hover:bg-[#3b82f6] transition-colors">
               Schedule Consultation
               <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/67adba6a3ab018a0349e2bc2_CTA%20Arrow%20(2).svg" className="ml-4 w-4 invert group-hover:translate-x-1 transition-transform" alt="Arrow" />
             </button>
