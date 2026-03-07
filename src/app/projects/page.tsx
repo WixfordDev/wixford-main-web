@@ -8,40 +8,36 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import { ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import { projectsData } from './projectsData';
 
 const categories = [
-  "Explore All", "SaaS", "Fintech", "EdTech", "Healthcare", "Real Estate", "Automotive"
+  "Explore All", "Real Estate", "Health & Fitness", "Food & Dining", "Home Improvement"
 ];
 
-const projects = [
-  {
-    title: "Materio - Unified Supply Dashboard",
-    description: "Streamlining supplier and inventory management with data-led insights and real-time tracking.",
-    category: "SaaS",
-    image: "https://cdn.prod.website-files.com/674703d2af36853f65da67e0/6984914b8df3c167977316c2_Thumbnail.png"
-  },
-  {
-    title: "Esdiac - Borderless Communication",
-    description: "A seamless mobile experience for international calling, eSIM data, and digital payments.",
-    category: "Telecommunication",
-    image: "https://cdn.prod.website-files.com/674703d2af36853f65da67e0/696887601c99f2cd330b64a5_UX%20_%20Design%20Monks.avif"
-  },
-  {
-    title: "Triply - Travel Planning",
-    description: "An AI-driven travel orchestration platform simplifying complex itinerary planning and booking workflows.",
-    category: "Travel",
-    image: "https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/67ac7758594e31e0312a925f_e0482580c600f74a17f23e4f9a90e82e_1.avif"
-  },
-  {
-    title: "Plate - Restaurant Booking",
-    description: "A premium reservation management system optimizing table turnover and guest experience for high-end dining.",
-    category: "Restaurant",
-    image: "https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/67ac7759bb3dd367d1496be0_7bc437d91a35f0cfd064cdc379817e74_2.avif"
-  }
-];
+function ProjectArrow({ accentColor }: { accentColor: string }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="p-3 rounded-full border transition-all duration-300 flex-shrink-0"
+      style={{
+        backgroundColor: hovered ? accentColor : 'transparent',
+        borderColor: hovered ? accentColor : '#e5e7eb',
+        color: hovered ? '#fff' : '#000',
+      }}
+    >
+      <ArrowUpRight size={20} />
+    </div>
+  );
+}
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState("Explore All");
+
+  const filtered = activeCategory === "Explore All"
+    ? projectsData
+    : projectsData.filter((p) => p.category === activeCategory);
 
   return (
     <div className="page-wrapper bg-[#0a0a0a] min-h-screen text-white selection:bg-[#3b82f6] selection:text-white">
@@ -121,37 +117,29 @@ export default function Projects() {
           {/* Project Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-            {projects.map((project, index) => (
-              <div key={index} className="group cursor-pointer">
+            {filtered.map((project, index) => (
+              <Link key={project.slug} href={`/projects/${project.slug}`} className="group cursor-pointer block">
                 <div className="overflow-hidden rounded-2xl mb-6 bg-gray-100 relative aspect-[16/10]">
                   <img
                     src={project.image}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                    alt={project.title}
+                    alt={project.cardTitle}
                   />
-                  {/* Overlay for hover effect */}
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
                 </div>
                 <div className="flex justify-between items-start">
-                    <div>
-                        <h3 className="text-2xl font-bold mb-2 group-hover:text-[#3b82f6] transition-colors">{project.title}</h3>
-                        <p className="text-gray-600 line-clamp-2 mb-4 max-w-md">{project.description}</p>
-                        <span className="text-sm font-semibold uppercase tracking-wider text-gray-400">{project.category}</span>
-                    </div>
-                    <div className="p-3 rounded-full border border-gray-200 group-hover:bg-[#3b82f6] group-hover:border-[#3b82f6] group-hover:text-white transition-all duration-300">
-                        <ArrowUpRight size={20} />
-                    </div>
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2 transition-opacity group-hover:opacity-70">
+                      {project.cardTitle}
+                    </h3>
+                    <p className="text-gray-600 line-clamp-2 mb-4 max-w-md">{project.cardDescription}</p>
+                    <span className="text-sm font-semibold uppercase tracking-wider text-gray-400">{project.category}</span>
+                  </div>
+                  <ProjectArrow accentColor={project.accentColor} />
                 </div>
-              </div>
+              </Link>
             ))}
 
-          </div>
-
-          {/* Pagination */}
-          <div className="mt-20 flex justify-center items-center space-x-4">
-            <span className="w-10 h-10 flex items-center justify-center bg-black text-white rounded-full cursor-default">1</span>
-            <a href="#" className="w-10 h-10 flex items-center justify-center border border-gray-300 rounded-full hover:bg-gray-100 transition-colors">2</a>
-            <a href="#" className="flex items-center justify-center border border-gray-300 rounded-full px-6 h-10 hover:bg-gray-100 transition-colors">Next</a>
           </div>
 
         </div>
