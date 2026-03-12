@@ -7,21 +7,21 @@ const services = [
     id: 1,
     title: "UI/UX Design",
     description: "User-centric interface design, wireframing, prototyping, product design, and interaction design focused on usability and performance.",
-    image: "https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/673dda6140bcd4600e7ca191_Right%20Side%20Mockup%20(3).avif",
+    image: "/images/uiu.jpeg",
     cta: "See More"
   },
   {
     id: 2,
     title: "Web Development",
     description: "Frontend & backend development, full-stack solutions, custom web applications, scalable architecture, and API integrations.",
-    image: "https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/6816dbec97d1a7046e191a44_a0dd450072c5388a239c2d54d1345710_about_photo%2003.avif",
+    image: "/images/web.jpeg",
     cta: "See More"
   },
   {
     id: 3,
     title: "Mobile App Development",
     description: "High-performance iOS & Android apps, cross-platform solutions, MVP builds, and scalable mobile products.",
-    image: "https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/6816dbec00128582f247afee_f6b872681a7b875b4a7bb6f4384ea770_about_photo%2002.avif",
+    image: "/images/app.jpeg",
     cta: "See More"
   }
 ];
