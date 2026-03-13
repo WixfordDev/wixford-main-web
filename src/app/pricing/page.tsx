@@ -7,17 +7,11 @@ import Link from 'next/link';
 
 export default function PricingPage() {
   const [activeMainTab, setActiveMainTab] = useState('website');
-  const [activeSubTab, setActiveSubTab] = useState('1-4 Pages');
 
   const mainTabs = [
     { id: 'website', label: 'Website' },
-    { id: 'webapp', label: 'Web App' },
     { id: 'mobileapp', label: 'Mobile App' },
-    { id: 'branding', label: 'Branding' },
-    { id: 'subscription', label: 'Subscription' },
   ];
-
-  const subTabs = ['1-4 Pages', '5-9 Pages', '10-15 Pages', 'Custom'];
 
   return (
     <div className="page-wrapper bg-[#0a0a0a] min-h-screen text-white selection:bg-[#3b82f6] selection:text-white">
@@ -64,118 +58,198 @@ export default function PricingPage() {
             ))}
           </div>
 
-          {/* Website Sub-Tabs */}
+          {/* ── WEBSITE PLANS ── */}
           {activeMainTab === 'website' && (
             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="tab-panel active"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
             >
-              <div className="flex justify-center gap-3 mb-16 overflow-x-auto pb-4">
-                {subTabs.map((tab) => (
-                  <button
-                    key={tab}
-                    onClick={() => setActiveSubTab(tab)}
-                    className={`px-6 py-2 rounded-full border text-sm whitespace-nowrap transition-all duration-300 ${
-                      activeSubTab === tab
-                        ? 'border-[#3b82f6] text-white bg-[#3b82f6]/10'
-                        : 'border-white/20 text-gray-400 hover:bg-white/5'
-                    }`}
-                  >
-                    {tab}
-                  </button>
-                ))}
-              </div>
-
-              {/* PRICING GRID */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 
-                {/* Basic Card */}
+                {/* Starter */}
                 <motion.div
                   className="pricing-card bg-[#111] border border-white/10 p-8 rounded-[32px] text-white"
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="mb-8">
-                    <div className="text-4xl font-bold mb-2">$1,800</div>
-                    <p className="text-gray-400 text-sm">MVP Design. Ideal for Startups.</p>
+                    <div className="text-4xl font-bold mb-2">$500 – $800</div>
+                    <p className="text-gray-400 text-sm">Ideal for small businesses</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-6 text-[#60a5fa]">MVP Launch</h3>
+                  <h3 className="text-xl font-bold mb-2 text-[#60a5fa]">Starter Website</h3>
+                  <div className="flex items-center gap-2 text-gray-500 text-sm mb-6"><Clock size={14} /> 7–10 days</div>
+                  <div className="h-px bg-white/10 w-full mb-6"></div>
                   <ul className="space-y-4 mb-10 text-gray-300">
-                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> Market Research</li>
-                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> High-fidelity Prototype</li>
-                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> Iterative Revisions</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Up to 5 pages</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Responsive design</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Basic UI/UX</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Contact form</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Basic SEO setup</li>
                   </ul>
-                  <button className="w-full py-4 rounded-xl border border-white/20 hover:bg-white hover:text-black transition font-bold">Schedule Consultation</button>
+                  <button className="w-full py-4 rounded-xl border border-white/20 hover:bg-white hover:text-black transition font-bold">Get Started</button>
                 </motion.div>
 
-                {/* Popular Card (Middle) */}
+                {/* Business — Popular */}
                 <motion.div
                   className="pricing-card relative p-10 rounded-[32px] text-white z-10 scale-105 md:scale-110 bg-gradient-to-br from-[#1d4ed8]/15 to-[#0a0a0a]"
                   whileHover={{ scale: 1.12 }}
                 >
-                  {/* Base border and shadow */}
                   <div className="absolute inset-0 rounded-[32px] border border-[#3b82f6]/60 shadow-[0_8px_24px_rgba(59,130,246,0.1)] pointer-events-none"></div>
-
-                  {/* Animated glow layer */}
                   <motion.div
                     className="absolute inset-0 rounded-[32px] border border-[#3b82f6] shadow-[0_8px_40px_rgba(59,130,246,0.4)] pointer-events-none"
                     animate={{ opacity: [0, 1, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   ></motion.div>
-
                   <div className="relative z-10">
                     <motion.div
-                        className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#3b82f6] to-cyan-500 px-6 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg shadow-blue-500/40"
-                        animate={{ scale: [1, 1.05, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                      className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#3b82f6] to-cyan-500 px-6 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg shadow-blue-500/40"
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     >
-                        Popular
+                      Popular
                     </motion.div>
                     <div className="mb-8">
-                        <div className="text-5xl font-bold mb-2">$2,880</div>
-                        <p className="text-gray-400 text-sm">Design + Development</p>
+                      <div className="text-5xl font-bold mb-2">$1,200 – $1,800</div>
+                      <p className="text-gray-400 text-sm">Ideal for growing companies</p>
                     </div>
-                    <h3 className="text-2xl font-bold mb-6 text-[#60a5fa]">Growth Acceleration</h3>
-                    <div className="h-px bg-white/10 w-full mb-8"></div>
+                    <h3 className="text-2xl font-bold mb-2 text-[#60a5fa]">Business Website</h3>
+                    <div className="flex items-center gap-2 text-gray-500 text-sm mb-6"><Clock size={14} /> 2–3 weeks</div>
+                    <div className="h-px bg-white/10 w-full mb-6"></div>
                     <ul className="space-y-4 mb-10 text-gray-300">
-                        <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> Everything from MVP</li>
-                        <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> Full Stack Development</li>
-                        <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> SEO & Performance Optimization</li>
-                        <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> 3 Months Support</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Up to 10–12 pages</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Custom UI/UX design</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> CMS / admin panel</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> SEO optimization</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Performance optimization</li>
                     </ul>
-                    <button className="w-full py-4 rounded-xl bg-[#3b82f6] hover:bg-[#2563eb] transition font-bold shadow-xl shadow-[#3b82f6]/20">Start Growth Plan</button>
+                    <button className="w-full py-4 rounded-xl bg-[#3b82f6] hover:bg-[#2563eb] transition font-bold shadow-xl shadow-[#3b82f6]/20">Get Started</button>
                   </div>
                 </motion.div>
 
-                {/* Advanced Card */}
+                {/* Advanced */}
                 <motion.div
                   className="pricing-card bg-[#111] border border-white/10 p-8 rounded-[32px] text-white"
                   whileHover={{ scale: 1.02, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="mb-8">
-                    <div className="text-4xl font-bold mb-2">$3,960</div>
-                    <p className="text-gray-400 text-sm">Full Brand Experience</p>
+                    <div className="text-4xl font-bold mb-2">$3,000 – $6,000</div>
+                    <p className="text-gray-400 text-sm">Ideal for startups / SaaS</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-6 text-[#60a5fa]">Enterprise Suite</h3>
+                  <h3 className="text-xl font-bold mb-2 text-[#60a5fa]">Advanced Web App</h3>
+                  <div className="flex items-center gap-2 text-gray-500 text-sm mb-6"><Clock size={14} /> 1–2 months</div>
+                  <div className="h-px bg-white/10 w-full mb-6"></div>
                   <ul className="space-y-4 mb-10 text-gray-300">
-                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> Everything from Growth</li>
-                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> Comprehensive Branding</li>
-                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6]" size={18} /> Advanced Analytics Integration</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Custom web application</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Dashboard / admin system</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Authentication system</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> API integration</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Database architecture</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> 1–2 months support</li>
                   </ul>
-                  <button className="w-full py-4 rounded-xl border border-white/20 hover:bg-white hover:text-black transition font-bold">Contact Sales</button>
+                  <button className="w-full py-4 rounded-xl border border-white/20 hover:bg-white hover:text-black transition font-bold">Get Started</button>
                 </motion.div>
 
               </div>
             </motion.div>
           )}
 
-          {activeMainTab !== 'website' && (
-              <div className="text-center py-20 text-gray-500">
-                  <p>Pricing details for {mainTabs.find(t => t.id === activeMainTab)?.label} coming soon.</p>
+          {/* ── MOBILE APP PLANS ── */}
+          {activeMainTab === 'mobileapp' && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+
+                {/* Basic */}
+                <motion.div
+                  className="pricing-card bg-[#111] border border-white/10 p-8 rounded-[32px] text-white"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="mb-8">
+                    <div className="text-4xl font-bold mb-2">$2,500 – $4,000</div>
+                    <p className="text-gray-400 text-sm">Ideal for simple app ideas</p>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-[#60a5fa]">Basic Mobile App</h3>
+                  <div className="flex items-center gap-2 text-gray-500 text-sm mb-6"><Clock size={14} /> 3–4 weeks</div>
+                  <div className="h-px bg-white/10 w-full mb-6"></div>
+                  <ul className="space-y-4 mb-10 text-gray-300">
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> 6–8 screens</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Android app</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> UI design included</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> API integration</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Basic backend</li>
+                  </ul>
+                  <button className="w-full py-4 rounded-xl border border-white/20 hover:bg-white hover:text-black transition font-bold">Get Started</button>
+                </motion.div>
+
+                {/* Standard — Popular */}
+                <motion.div
+                  className="pricing-card relative p-10 rounded-[32px] text-white z-10 scale-105 md:scale-110 bg-gradient-to-br from-[#1d4ed8]/15 to-[#0a0a0a]"
+                  whileHover={{ scale: 1.12 }}
+                >
+                  <div className="absolute inset-0 rounded-[32px] border border-[#3b82f6]/60 shadow-[0_8px_24px_rgba(59,130,246,0.1)] pointer-events-none"></div>
+                  <motion.div
+                    className="absolute inset-0 rounded-[32px] border border-[#3b82f6] shadow-[0_8px_40px_rgba(59,130,246,0.4)] pointer-events-none"
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  ></motion.div>
+                  <div className="relative z-10">
+                    <motion.div
+                      className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#3b82f6] to-cyan-500 px-6 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg shadow-blue-500/40"
+                      animate={{ scale: [1, 1.05, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      Popular
+                    </motion.div>
+                    <div className="mb-8">
+                      <div className="text-5xl font-bold mb-2">$5,000 – $8,000</div>
+                      <p className="text-gray-400 text-sm">Ideal for startups & MVPs</p>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-2 text-[#60a5fa]">Standard Mobile App</h3>
+                    <div className="flex items-center gap-2 text-gray-500 text-sm mb-6"><Clock size={14} /> 4–6 weeks</div>
+                    <div className="h-px bg-white/10 w-full mb-6"></div>
+                    <ul className="space-y-4 mb-10 text-gray-300">
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> 10–15 screens</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Android + iOS</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Custom UI/UX</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Push notifications</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> API integrations</li>
+                      <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Admin panel</li>
+                    </ul>
+                    <button className="w-full py-4 rounded-xl bg-[#3b82f6] hover:bg-[#2563eb] transition font-bold shadow-xl shadow-[#3b82f6]/20">Get Started</button>
+                  </div>
+                </motion.div>
+
+                {/* Advanced */}
+                <motion.div
+                  className="pricing-card bg-[#111] border border-white/10 p-8 rounded-[32px] text-white"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="mb-8">
+                    <div className="text-4xl font-bold mb-2">$10,000+</div>
+                    <p className="text-gray-400 text-sm">Ideal for complex platforms</p>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-[#60a5fa]">Advanced Mobile App</h3>
+                  <div className="flex items-center gap-2 text-gray-500 text-sm mb-6"><Clock size={14} /> Custom timeline</div>
+                  <div className="h-px bg-white/10 w-full mb-6"></div>
+                  <ul className="space-y-4 mb-10 text-gray-300">
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Fully custom mobile platform</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Advanced UI/UX</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Scalable backend</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Payment integration</li>
+                    <li className="flex items-center"><Check className="mr-3 text-[#3b82f6] flex-shrink-0" size={18} /> Analytics & tracking</li>
+                  </ul>
+                  <button className="w-full py-4 rounded-xl border border-white/20 hover:bg-white hover:text-black transition font-bold">Get Started</button>
+                </motion.div>
+
               </div>
+            </motion.div>
           )}
 
         </div>

@@ -16,8 +16,16 @@ const logos = [
 export default function Marquee() {
   return (
     <section className="py-10 border-y border-white/5 bg-black/20 backdrop-blur-sm">
-      <div className="container mx-auto mb-6 text-center">
-         <p className="text-sm text-white/40 uppercase tracking-widest">Trusted by innovative companies</p>
+      <div className="container mx-auto mb-8 text-center px-4">
+        <p className="text-xs font-semibold text-white/30 uppercase tracking-[0.3em] mb-3">Trusted by</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white/80 tracking-tight">
+          Innovative Companies
+        </h2>
+        <div className="mt-4 flex items-center justify-center gap-3">
+          <span className="h-px w-16 bg-gradient-to-r from-transparent to-white/20" />
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-400/70" />
+          <span className="h-px w-16 bg-gradient-to-l from-transparent to-white/20" />
+        </div>
       </div>
       <Splide
         options={{
@@ -41,7 +49,7 @@ export default function Marquee() {
       >
         {logos.map((logo, index) => (
           <SplideSlide key={index} className="flex items-center justify-center py-4">
-            <img src={logo} alt={`Client Logo ${index}`} className="max-h-8 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 px-8" />
+            <img src={logo} alt={`Client Logo ${index}`} className="max-h-14 opacity-50 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0 px-8" />
           </SplideSlide>
         ))}
       </Splide>
