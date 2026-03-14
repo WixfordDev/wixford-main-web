@@ -1,10 +1,12 @@
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 
 const services = [
   {
     id: 1,
+    slug: 'ui-ux-design',
     title: "UI/UX Design",
     description: "User-centric interface design, wireframing, prototyping, product design, and interaction design focused on usability and performance.",
     image: "/images/uiu.jpeg",
@@ -12,6 +14,7 @@ const services = [
   },
   {
     id: 2,
+    slug: 'web-development',
     title: "Web Development",
     description: "Frontend & backend development, full-stack solutions, custom web applications, scalable architecture, and API integrations.",
     image: "/images/web.jpeg",
@@ -19,6 +22,7 @@ const services = [
   },
   {
     id: 3,
+    slug: 'app-development',
     title: "Mobile App Development",
     description: "High-performance iOS & Android apps, cross-platform solutions, MVP builds, and scalable mobile products.",
     image: "/images/app.jpeg",
@@ -72,13 +76,12 @@ export default function WhatWeDo() {
                 <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg">
                   {service.description}
                 </p>
-                <a href="#" className="group inline-flex items-center text-lg font-medium text-black hover:text-[#3b82f6] transition-colors">
+                <Link href={`/services/${service.slug}`} className="group inline-flex items-center text-lg font-medium text-black hover:text-[#3b82f6] transition-colors">
                   {service.cta}
                   <span className="ml-2 group-hover:translate-x-1 transition-transform">
                     <ArrowRight size={20} />
                   </span>
-                  <span className="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-[#3b82f6] absolute bottom-0 left-0"></span>
-                </a>
+                </Link>
               </motion.div>
 
               {/* Image Card */}

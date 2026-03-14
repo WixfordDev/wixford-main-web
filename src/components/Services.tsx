@@ -1,9 +1,11 @@
 import React from 'react';
+import Link from 'next/link';
 import { ArrowUpRight, Palette, Globe, Smartphone, Zap } from 'lucide-react';
 
 const services = [
   {
     number: '01',
+    slug: 'ui-ux-design',
     icon: Palette,
     title: "Strategic UI/UX Design",
     description: "User-centric interfaces that optimize conversion rates and user retention.",
@@ -11,6 +13,7 @@ const services = [
   },
   {
     number: '02',
+    slug: 'web-development',
     icon: Globe,
     title: "Custom Web Architecture",
     description: "Secure, high-performance web applications tailored to complex business logic.",
@@ -18,6 +21,7 @@ const services = [
   },
   {
     number: '03',
+    slug: 'app-development',
     icon: Smartphone,
     title: "Enterprise Mobile Apps",
     description: "Native iOS/Android & Cross-platform solutions built for performance and scale.",
@@ -25,6 +29,7 @@ const services = [
   },
   {
     number: '04',
+    slug: 'digital-transformation',
     icon: Zap,
     title: "Digital Transformation",
     description: "Modernizing legacy systems with cutting-edge cloud and AI technologies.",
@@ -54,27 +59,31 @@ export default function Services() {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <div key={index} className="border border-gray-100 p-8 md:p-10 rounded-[32px] hover:shadow-lg hover:border-gray-200 transition-all bg-white group">
+              <Link key={index} href={`/services/${service.slug}`} className="block border border-gray-100 p-8 md:p-10 rounded-[32px] hover:shadow-lg hover:border-gray-200 transition-all bg-white group">
                 {/* Top row: icon + number */}
                 <div className="flex items-center justify-between mb-6">
                   <div className="w-12 h-12 rounded-2xl bg-[#f0f6ff] flex items-center justify-center">
                     <Icon size={24} strokeWidth={1.6} className="text-[#3b82f6]" />
                   </div>
-                  
+                  <span className="text-5xl font-black text-gray-100 leading-none select-none">{service.number}</span>
                 </div>
 
                 <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
                 <p className="text-gray-500 leading-relaxed mb-6">{service.description}</p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {service.tags.map((tag, i) => (
                     <span key={i} className="text-xs font-semibold px-3 py-1.5 bg-gray-50 border border-gray-200 rounded-full text-gray-600">
                       {tag}
                     </span>
                   ))}
                 </div>
-              </div>
+
+                <div className="flex items-center gap-1.5 text-sm font-semibold text-[#3b82f6] group-hover:gap-2.5 transition-all duration-200">
+                  See More <ArrowUpRight size={15} />
+                </div>
+              </Link>
             );
           })}
         </div>
