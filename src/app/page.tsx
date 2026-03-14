@@ -9,6 +9,7 @@ import WhatWeDo from '@/components/WhatWeDo';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
+import WixfordSection from '@/components/WixfordSection';
 
 export default function Home() {
   return (
@@ -20,7 +21,8 @@ export default function Home() {
         <VideoShowcase />
         <WhatWeDo />
         <WhyChooseUs />
-        <Pricing />
+        {/* <Pricing /> */}
+        <WixfordSection />
         <FAQ />
         {/* Placeholder for other sections */}
         <section className="py-32 container mx-auto px-4 text-center">

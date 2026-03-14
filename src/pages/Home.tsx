@@ -7,6 +7,7 @@ import VideoShowcase from '../components/VideoShowcase';
 import WhatWeDo from '../components/WhatWeDo';
 import WhyChooseUs from '../components/WhyChooseUs';
 import FAQ from '../components/FAQ';
+import WixfordSection from '../components/WixfordSection';
 import GlobalFooter from '../components/GlobalFooter';
 
 export default function Home() {
@@ -20,6 +21,7 @@ export default function Home() {
         <VideoShowcase />
         <WhatWeDo />
         <WhyChooseUs />
+        <WixfordSection />
         <FAQ />
         {/* Placeholder for other sections */}
         <section className="py-32 container mx-auto px-4 text-center">

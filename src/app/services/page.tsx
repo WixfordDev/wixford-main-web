@@ -7,15 +7,16 @@ import { motion } from 'motion/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-cards';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Link from 'next/link';
+import WhatWeDo from '@/components/WhatWeDo';
 
 export default function ServicesPage() {
   return (
-    <div className="page-wrapper bg-[#0a0a0a] min-h-screen text-white selection:bg-[#3b82f6] selection:text-white">
+    <div className="page-wrapper bg-white min-h-screen text-white selection:bg-[#3b82f6] selection:text-white">
 
       {/* HERO SECTION WITH VIDEO BG */}
-      <section className="relative min-h-[70vh] flex items-center justify-center text-center overflow-hidden pt-20">
+      <section className="relative bg-[#0a0a0a] min-h-[70vh] flex items-center justify-center text-center overflow-hidden pt-20">
         <div className="absolute inset-0 w-full h-full z-0">
             <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-50">
             <source src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9%2F674238984b5b15db637f4a63_-60bc-4584-9ad6-9caa931f8372-transcode.mp4" type="video/mp4" />
@@ -32,59 +33,12 @@ export default function ServicesPage() {
             <span className="font-display italic font-normal text-[#60a5fa]">Technology</span>
           </h1>
         </div>
-      </section>
+      </section>  
 
-      {/* MAIN SERVICES GRID */}
-      <section className="bg-[#fafafa] rounded-t-[40px] py-24 text-black relative z-10">
-        <div className="max-w-[1252px] mx-auto px-6">
-
-          {/* Service Card 1: UI/UX */}
-          <div className="service-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-32">
-            <div className="rounded-3xl overflow-hidden shadow-2xl group aspect-[4/3] relative">
-              <img src="https://cdn.prod.website-files.com/674703d2af36853f65da67e0/6823ffd5f034b88812baa255_service%20thumb_UIUX%20Design.avif"
-                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="UI/UX Design" />
-            </div>
-            <div className="space-y-8">
-              <h2 className="text-4xl md:text-5xl font-bold">Advanced UI/UX Strategy</h2>
-              <p className="text-gray-600 text-lg leading-relaxed">We engineer intuitive digital experiences that drive user engagement and maximize conversion rates through data-driven design.</p>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center border-b border-gray-200 pb-4 cursor-pointer group">
-                  <span className="font-medium text-xl group-hover:text-[#3b82f6] transition-colors">01 User Experience Strategy</span>
-                  <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/67a20bdb0c4f1aa404f9cd38_CTA-Arrow.svg" className="w-6 transform group-hover:translate-x-2 transition-transform" alt="Arrow" />
-                </div>
-                <div className="flex justify-between items-center border-b border-gray-200 pb-4 cursor-pointer group">
-                  <span className="font-medium text-xl text-gray-400 group-hover:text-[#3b82f6] transition-colors">02 Interface Architecture</span>
-                </div>
-                <div className="flex justify-between items-center border-b border-gray-200 pb-4 cursor-pointer group">
-                  <span className="font-medium text-xl text-gray-400 group-hover:text-[#3b82f6] transition-colors">03 Usability Optimization</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Service Card 2: Branding (Reversed) */}
-          <div className="service-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-32">
-            <div className="space-y-8 lg:order-1 order-2">
-              <h2 className="text-4xl md:text-5xl font-bold">Corporate Brand Identity</h2>
-              <p className="text-gray-600 text-lg leading-relaxed">We build authoritative brand identities that command market presence and foster long-term customer loyalty.</p>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center border-b border-gray-200 pb-4 cursor-pointer group">
-                  <span className="font-medium text-xl group-hover:text-[#3b82f6] transition-colors">01 Strategic Brand Positioning</span>
-                  <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/67a20bdb0c4f1aa404f9cd38_CTA-Arrow.svg" className="w-6 transform group-hover:translate-x-2 transition-transform" alt="Arrow" />
-                </div>
-              </div>
-            </div>
-            <div className="rounded-3xl overflow-hidden lg:order-2 order-1 shadow-2xl group aspect-[4/3] relative">
-              <img src="https://cdn.prod.website-files.com/674703d2af36853f65da67e0/67a0f89a8c7b92e4b2ade7e0_Logo%20(1).avif"
-                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Branding" />
-            </div>
-          </div>
-
-        </div>
-      </section>
+      <WhatWeDo /> 
 
       {/* WHY US SECTION */}
-      <section className="bg-white py-24 border-t border-gray-100 text-black">
+      <section className="bg-white py-24 rounded-3xl border-t border-gray-100 text-black">
         <div className="max-w-[1252px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="bg-blue-100 text-[#3b82f6] px-4 py-1.5 rounded-full text-sm font-bold mb-6 inline-block">Why Industry Leaders Choose Us</span>
