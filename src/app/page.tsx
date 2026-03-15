@@ -24,13 +24,6 @@ export default function Home() {
         {/* <Pricing /> */}
         <WixfordSection />
         <FAQ />
-        {/* Placeholder for other sections */}
-        <section className="py-32 container mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold mb-8">Built for Market Leadership</h2>
-            <p className="text-[var(--text-secondary)] max-w-2xl mx-auto">
-              We deliver enterprise-grade software solutions that combine technical precision with strategic business insight.
-            </p>
-        </section>
       </main>
     </div>
   );

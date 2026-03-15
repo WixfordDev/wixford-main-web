@@ -15,8 +15,8 @@ const logos = [
 
 export default function Marquee() {
   return (
-    <section className="py-10 border-y border-white/5 bg-black/20 backdrop-blur-sm">
-      <div className="container mx-auto mb-8 text-center px-4">
+    <section className="py-6 sm:py-10 border-y border-white/5 bg-black/20 backdrop-blur-sm">
+      <div className="container mx-auto mb-5 sm:mb-8 text-center px-4">
         <p className="text-xs font-semibold text-white/30 uppercase tracking-[0.3em] mb-3">Trusted by</p>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white/80 tracking-tight">
           Innovative Companies
