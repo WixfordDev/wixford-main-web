@@ -171,12 +171,12 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           </nav>
 
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20">
+            {/* <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20">
               <Icon size={30} strokeWidth={1.6} className="text-white" />
-            </div>
+            </div> */}
           </div>
 
-          <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-3">{service.number} — Service</p>
+          {/* <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-3">{service.number} — Service</p> */}
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
             {service.title}
           </h1>
