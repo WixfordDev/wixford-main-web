@@ -64,7 +64,8 @@ export default function GlobalFooter() {
             {/* Brand & Socials */}
             <div className="md:col-span-4 space-y-6">
               <div className="text-2xl font-black tracking-tight text-white">
-                Wix<span className="text-[#3b82f6]">ford</span>
+                {/* Wix<span className="text-[#3b82f6]">ford</span> */}
+                <img src="/images/logo.png" alt="" />
               </div>
               <p className="text-white/50 text-sm sm:text-base leading-relaxed max-w-sm">
                 A premier digital technology firm delivering world-class software solutions to startups and Fortune 500 companies.
