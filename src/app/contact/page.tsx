@@ -43,7 +43,7 @@ export default function ContactPage() {
           <nav className="flex justify-center gap-2 mb-8 text-sm text-gray-500">
             <Link href="/" className="hover:text-white transition">Home</Link> <span>/</span> <span className="text-white">Contact us</span>
           </nav>
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold leading-tight">
             Initiate Your <br />
             <span className="text-[#60a5fa] italic font-display font-normal">Digital Transformation</span>
           </h1>
@@ -52,7 +52,7 @@ export default function ContactPage() {
 
       {/* CONTACT FORM SECTION */}
       <section className="container mx-auto px-6 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           {/* Left side info */}
           <div className="space-y-12">
@@ -73,7 +73,7 @@ export default function ContactPage() {
           </div>
 
           {/* Form */}
-          <div className="bg-white/5 border border-white/10 p-10 rounded-[40px] backdrop-blur-md">
+          <div className="bg-white/5 border border-white/10 p-6 sm:p-8 md:p-10 rounded-[28px] sm:rounded-[40px] backdrop-blur-md">
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div>
                     <label className="block text-sm text-gray-400 mb-2">Full Name</label>
@@ -118,18 +118,18 @@ export default function ContactPage() {
       <section className="border-t border-white/5 py-24">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
             <div
-                className="p-12 border border-white/10 rounded-[40px] group hover:border-[#3b82f6] transition cursor-pointer bg-white/5 hover:bg-[#3b82f6]/5"
+                className="p-6 sm:p-8 md:p-12 border border-white/10 rounded-[28px] sm:rounded-[40px] group hover:border-[#3b82f6] transition cursor-pointer bg-white/5 hover:bg-[#3b82f6]/5"
                 onClick={() => handleCopyEmail('hello@designmonks.co')}
             >
                 <h4 className="text-gray-400 text-sm mb-2">Business Inquiries</h4>
-                <div className="text-2xl font-bold group-hover:text-[#60a5fa] transition">hello@designmonks.co</div>
+                <div className="text-lg sm:text-2xl font-bold group-hover:text-[#60a5fa] transition break-all">hello@designmonks.co</div>
             </div>
             <div
-                className="p-12 border border-white/10 rounded-[40px] group hover:border-[#3b82f6] transition cursor-pointer bg-white/5 hover:bg-[#3b82f6]/5"
+                className="p-6 sm:p-8 md:p-12 border border-white/10 rounded-[28px] sm:rounded-[40px] group hover:border-[#3b82f6] transition cursor-pointer bg-white/5 hover:bg-[#3b82f6]/5"
                 onClick={() => handleCopyEmail('career@designmonks.co')}
             >
                 <h4 className="text-gray-400 text-sm mb-2">Careers & Recruitment</h4>
-                <div className="text-2xl font-bold group-hover:text-[#60a5fa] transition">career@designmonks.co</div>
+                <div className="text-lg sm:text-2xl font-bold group-hover:text-[#60a5fa] transition break-all">career@designmonks.co</div>
             </div>
         </div>
       </section>
@@ -137,7 +137,7 @@ export default function ContactPage() {
       {/* GLOBAL PRESENCE */}
       <section className="relative py-32 bg-[#050505] -mb-10 pb-40">
         <div className="container mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 <div className="space-y-2">
                     <h5 className="font-bold">United States</h5>
                     <p className="text-gray-500 text-xs leading-relaxed">16 Cove Road, <br /> Mount Arlington, NJ 07856</p>

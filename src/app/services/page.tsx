@@ -28,7 +28,7 @@ export default function ServicesPage() {
           <nav className="flex justify-center space-x-2 mb-6 text-sm font-light text-gray-400">
             <Link href="/" className="hover:text-white transition">Home</Link> <span>/</span> <span className="text-white">Services</span>
           </nav>
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
             Accelerating Business Through <br />
             <span className="font-display italic font-normal text-[#60a5fa]">Technology</span>
           </h1>

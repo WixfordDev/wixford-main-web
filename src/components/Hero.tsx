@@ -26,7 +26,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-6 sm:pb-10 md:pb-16">
+    <section className="relative md:min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-24 md:pt-32 pb-6 sm:pb-10 md:pb-16">
       {/* Glow Effect */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.3)_0%,transparent_70%)] pointer-events-none z-0" />
       

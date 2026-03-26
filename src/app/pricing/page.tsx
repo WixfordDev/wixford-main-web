@@ -22,7 +22,7 @@ export default function PricingPage() {
           <nav className="flex justify-center space-x-2 mb-6 text-sm font-light text-gray-400">
             <Link href="/" className="hover:text-white transition">Home</Link> <span>/</span> <span className="text-white">Pricing</span>
           </nav>
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white leading-tight">
             Transparent Investment <br />
             <span className="font-display italic font-normal text-[#60a5fa]">Models for Growth</span>
           </h1>
@@ -92,8 +92,8 @@ export default function PricingPage() {
 
                 {/* Business — Popular */}
                 <motion.div
-                  className="pricing-card relative p-10 rounded-[32px] text-white z-10 scale-105 md:scale-110 bg-gradient-to-br from-[#1d4ed8]/15 to-[#0a0a0a]"
-                  whileHover={{ scale: 1.12 }}
+                  className="pricing-card relative p-8 md:p-10 rounded-[32px] text-white z-10 md:scale-110 bg-gradient-to-br from-[#1d4ed8]/15 to-[#0a0a0a]"
+                  whileHover={{ scale: 1.02, y: -5 }}
                 >
                   <div className="absolute inset-0 rounded-[32px] border border-[#3b82f6]/60 shadow-[0_8px_24px_rgba(59,130,246,0.1)] pointer-events-none"></div>
                   <motion.div
@@ -189,8 +189,8 @@ export default function PricingPage() {
 
                 {/* Standard — Popular */}
                 <motion.div
-                  className="pricing-card relative p-10 rounded-[32px] text-white z-10 scale-105 md:scale-110 bg-gradient-to-br from-[#1d4ed8]/15 to-[#0a0a0a]"
-                  whileHover={{ scale: 1.12 }}
+                  className="pricing-card relative p-8 md:p-10 rounded-[32px] text-white z-10 md:scale-110 bg-gradient-to-br from-[#1d4ed8]/15 to-[#0a0a0a]"
+                  whileHover={{ scale: 1.02, y: -5 }}
                 >
                   <div className="absolute inset-0 rounded-[32px] border border-[#3b82f6]/60 shadow-[0_8px_24px_rgba(59,130,246,0.1)] pointer-events-none"></div>
                   <motion.div
@@ -301,7 +301,7 @@ export default function PricingPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl md:text-6xl font-bold mb-6 tracking-tight"
+              className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight"
             >
               Why Choose Wixford?
             </motion.h2>
@@ -321,23 +321,23 @@ export default function PricingPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="overflow-hidden rounded-[32px] bg-white/80 backdrop-blur-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-white/50 ring-1 ring-gray-100"
+            className="overflow-x-auto rounded-[32px] bg-white/80 backdrop-blur-xl shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] border border-white/50 ring-1 ring-gray-100"
           >
-            <table className="w-full text-left border-collapse">
+            <table className="w-full text-left border-collapse min-w-[600px]">
               <thead>
                 <tr className="border-b border-gray-100">
-                  <th className="p-8 w-1/4 font-bold text-gray-400 uppercase text-xs tracking-widest">Key Metrics</th>
-                  <th className="p-8 w-1/4 bg-blue-50/50 relative">
+                  <th className="p-4 sm:p-6 md:p-8 w-1/4 font-bold text-gray-400 uppercase text-xs tracking-widest">Key Metrics</th>
+                  <th className="p-4 sm:p-6 md:p-8 w-1/4 bg-blue-50/50 relative">
                       <div className="absolute top-0 left-0 w-full h-1 bg-[#3b82f6]"></div>
-                      <span className="text-xl font-bold text-[#3b82f6] block mb-1">Wixford</span>
+                      <span className="text-lg sm:text-xl font-bold text-[#3b82f6] block mb-1">Wixford</span>
                       <span className="text-xs text-blue-600/60 font-medium uppercase tracking-wider">Dedicated Partner</span>
                   </th>
-                  <th className="p-8 w-1/4 font-bold text-gray-600">
-                      <span className="text-lg block mb-1">In-House Team</span>
+                  <th className="p-4 sm:p-6 md:p-8 w-1/4 font-bold text-gray-600">
+                      <span className="text-base sm:text-lg block mb-1">In-House Team</span>
                       <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Resource Heavy</span>
                   </th>
-                  <th className="p-8 w-1/4 font-bold text-gray-600">
-                      <span className="text-lg block mb-1">Freelancers</span>
+                  <th className="p-4 sm:p-6 md:p-8 w-1/4 font-bold text-gray-600">
+                      <span className="text-base sm:text-lg block mb-1">Freelancers</span>
                       <span className="text-xs text-gray-400 font-medium uppercase tracking-wider">Variable Quality</span>
                   </th>
                 </tr>
@@ -345,90 +345,90 @@ export default function PricingPage() {
               <tbody className="divide-y divide-gray-100">
                 {/* Row 1: Time-to-Market */}
                 <tr className="group hover:bg-gray-50/50 transition-colors duration-300">
-                  <td className="p-8">
-                      <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-[#3b82f6] group-hover:text-white transition-colors">
-                              <Clock size={20} />
+                  <td className="p-4 sm:p-6 md:p-8">
+                      <div className="flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-[#3b82f6] group-hover:text-white transition-colors shrink-0">
+                              <Clock size={18} />
                           </div>
-                          <span className="font-bold text-gray-700">Time-to-Market</span>
+                          <span className="font-bold text-gray-700 text-sm sm:text-base">Time-to-Market</span>
                       </div>
                   </td>
-                  <td className="p-8 bg-blue-50/30 border-x border-blue-100/50">
-                      <div className="flex items-center gap-3">
-                          <CheckCircle2 className="text-[#3b82f6] fill-blue-100" size={24} />
-                          <span className="text-[#3b82f6] font-bold text-lg">Accelerated</span>
+                  <td className="p-4 sm:p-6 md:p-8 bg-blue-50/30 border-x border-blue-100/50">
+                      <div className="flex items-center gap-2">
+                          <CheckCircle2 className="text-[#3b82f6] fill-blue-100 shrink-0" size={20} />
+                          <span className="text-[#3b82f6] font-bold text-sm sm:text-base">Accelerated</span>
                       </div>
                   </td>
-                  <td className="p-8 text-gray-500">
-                      <div className="flex items-center gap-3">
-                          <Minus className="text-gray-300" size={24} />
-                          <span>Slow Hiring Cycle</span>
+                  <td className="p-4 sm:p-6 md:p-8 text-gray-500">
+                      <div className="flex items-center gap-2">
+                          <Minus className="text-gray-300 shrink-0" size={20} />
+                          <span className="text-sm sm:text-base">Slow Hiring Cycle</span>
                       </div>
                   </td>
-                  <td className="p-8 text-gray-500">
-                      <div className="flex items-center gap-3">
-                          <XCircle className="text-red-200" size={24} />
-                          <span>Unpredictable</span>
+                  <td className="p-4 sm:p-6 md:p-8 text-gray-500">
+                      <div className="flex items-center gap-2">
+                          <XCircle className="text-red-200 shrink-0" size={20} />
+                          <span className="text-sm sm:text-base">Unpredictable</span>
                       </div>
                   </td>
                 </tr>
 
                 {/* Row 2: Scalability */}
                 <tr className="group hover:bg-gray-50/50 transition-colors duration-300">
-                  <td className="p-8">
-                      <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-[#3b82f6] group-hover:text-white transition-colors">
-                              <TrendingUp size={20} />
+                  <td className="p-4 sm:p-6 md:p-8">
+                      <div className="flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-[#3b82f6] group-hover:text-white transition-colors shrink-0">
+                              <TrendingUp size={18} />
                           </div>
-                          <span className="font-bold text-gray-700">Scalability</span>
+                          <span className="font-bold text-gray-700 text-sm sm:text-base">Scalability</span>
                       </div>
                   </td>
-                  <td className="p-8 bg-blue-50/30 border-x border-blue-100/50">
-                      <div className="flex items-center gap-3">
-                          <CheckCircle2 className="text-[#3b82f6] fill-blue-100" size={24} />
-                          <span className="text-[#3b82f6] font-bold text-lg">Enterprise-Ready</span>
+                  <td className="p-4 sm:p-6 md:p-8 bg-blue-50/30 border-x border-blue-100/50">
+                      <div className="flex items-center gap-2">
+                          <CheckCircle2 className="text-[#3b82f6] fill-blue-100 shrink-0" size={20} />
+                          <span className="text-[#3b82f6] font-bold text-sm sm:text-base">Enterprise-Ready</span>
                       </div>
                   </td>
-                  <td className="p-8 text-gray-500">
-                      <div className="flex items-center gap-3">
-                          <Minus className="text-gray-300" size={24} />
-                          <span>Limited by Headcount</span>
+                  <td className="p-4 sm:p-6 md:p-8 text-gray-500">
+                      <div className="flex items-center gap-2">
+                          <Minus className="text-gray-300 shrink-0" size={20} />
+                          <span className="text-sm sm:text-base">Limited by Headcount</span>
                       </div>
                   </td>
-                  <td className="p-8 text-gray-500">
-                      <div className="flex items-center gap-3">
-                          <XCircle className="text-red-200" size={24} />
-                          <span>None</span>
+                  <td className="p-4 sm:p-6 md:p-8 text-gray-500">
+                      <div className="flex items-center gap-2">
+                          <XCircle className="text-red-200 shrink-0" size={20} />
+                          <span className="text-sm sm:text-base">None</span>
                       </div>
                   </td>
                 </tr>
 
                 {/* Row 3: ROI */}
                 <tr className="group hover:bg-gray-50/50 transition-colors duration-300">
-                  <td className="p-8">
-                      <div className="flex items-center gap-4">
-                          <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-[#3b82f6] group-hover:text-white transition-colors">
-                              <PieChart size={20} />
+                  <td className="p-4 sm:p-6 md:p-8">
+                      <div className="flex items-center gap-3">
+                          <div className="w-9 h-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 group-hover:bg-[#3b82f6] group-hover:text-white transition-colors shrink-0">
+                              <PieChart size={18} />
                           </div>
-                          <span className="font-bold text-gray-700">ROI</span>
+                          <span className="font-bold text-gray-700 text-sm sm:text-base">ROI</span>
                       </div>
                   </td>
-                  <td className="p-8 bg-blue-50/30 border-x border-blue-100/50">
-                      <div className="flex items-center gap-3">
-                          <CheckCircle2 className="text-[#3b82f6] fill-blue-100" size={24} />
-                          <span className="text-[#3b82f6] font-bold text-lg">Maximized</span>
+                  <td className="p-4 sm:p-6 md:p-8 bg-blue-50/30 border-x border-blue-100/50">
+                      <div className="flex items-center gap-2">
+                          <CheckCircle2 className="text-[#3b82f6] fill-blue-100 shrink-0" size={20} />
+                          <span className="text-[#3b82f6] font-bold text-sm sm:text-base">Maximized</span>
                       </div>
                   </td>
-                  <td className="p-8 text-gray-500">
-                      <div className="flex items-center gap-3">
-                          <Minus className="text-gray-300" size={24} />
-                          <span>High Overhead</span>
+                  <td className="p-4 sm:p-6 md:p-8 text-gray-500">
+                      <div className="flex items-center gap-2">
+                          <Minus className="text-gray-300 shrink-0" size={20} />
+                          <span className="text-sm sm:text-base">High Overhead</span>
                       </div>
                   </td>
-                  <td className="p-8 text-gray-500">
-                      <div className="flex items-center gap-3">
-                          <XCircle className="text-red-200" size={24} />
-                          <span>Variable</span>
+                  <td className="p-4 sm:p-6 md:p-8 text-gray-500">
+                      <div className="flex items-center gap-2">
+                          <XCircle className="text-red-200 shrink-0" size={20} />
+                          <span className="text-sm sm:text-base">Variable</span>
                       </div>
                   </td>
                 </tr>

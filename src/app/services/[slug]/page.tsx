@@ -177,7 +177,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
           </div>
 
           {/* <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-3">{service.number} — Service</p> */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-6">
             {service.title}
           </h1>
           <p className="text-white/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
@@ -224,10 +224,10 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.08 }}
-                  className="border border-gray-100 rounded-[28px] p-8 md:p-10 hover:shadow-lg hover:border-gray-200 transition-all"
+                  className="border border-gray-100 rounded-[28px] p-5 sm:p-8 md:p-10 hover:shadow-lg hover:border-gray-200 transition-all"
                 >
-                  <div className="text-4xl md:text-5xl font-black text-[#3b82f6] mb-2">{stat.value}</div>
-                  <div className="text-base text-gray-500 font-medium">{stat.label}</div>
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-black text-[#3b82f6] mb-2">{stat.value}</div>
+                  <div className="text-sm sm:text-base text-gray-500 font-medium">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -241,7 +241,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <div className="inline-block border border-white/20 text-white/70 px-4 py-1.5 rounded-full text-xs font-medium mb-6 uppercase tracking-wide">
                 What We Deliver
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
                 Core <span className="text-[#60a5fa]">Capabilities</span>
               </h2>
             </motion.div>
@@ -254,7 +254,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="border border-white/10 bg-white/5 p-10 md:p-12 rounded-[32px] hover:border-white/20 hover:bg-white/10 transition-all"
+                  className="border border-white/10 bg-white/5 p-7 md:p-10 lg:p-12 rounded-[32px] hover:border-white/20 hover:bg-white/10 transition-all"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-[#3b82f6]/20 border border-[#3b82f6]/30 flex items-center justify-center mb-7">
                     <Check size={24} strokeWidth={2.5} className="text-[#60a5fa]" />
@@ -274,7 +274,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <div className="inline-block bg-black text-white px-4 py-1.5 rounded-full text-xs font-medium mb-6 uppercase tracking-wide">
                 How We Work
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
                 Our <span className="text-[#3b82f6]">Process</span>
               </h2>
             </motion.div>
@@ -306,7 +306,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <div className="inline-block border border-white/20 text-white/70 px-4 py-1.5 rounded-full text-xs font-medium mb-6 uppercase tracking-wide">
                 Why Wixford
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
                 What Sets Us <span className="text-[#60a5fa]">Apart</span>
               </h2>
             </motion.div>
@@ -351,7 +351,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               <div className="inline-block bg-black text-white px-4 py-1.5 rounded-full text-xs font-medium mb-6 uppercase tracking-wide">
                 Client Stories
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold leading-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold leading-tight">
                 What Our <span className="text-[#3b82f6]">Clients</span> Say
               </h2>
             </motion.div>

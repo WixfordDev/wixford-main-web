@@ -204,12 +204,12 @@ export default function AboutPage() {
           </div>
 
           {/* image — big single + floating overlay */}
-          <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden h-[480px] md:h-[580px] ring-1 ring-black/5 shadow-2xl">
+          <div className="relative pb-10 sm:pb-12 lg:pb-0">
+            <div className="relative rounded-3xl overflow-hidden h-[380px] sm:h-[480px] md:h-[580px] ring-1 ring-black/5 shadow-2xl">
               <Image src="/images/about5.png" alt="Wixford team collaboration" fill className="object-cover" sizes="640px" />
             </div>
             {/* floating overlay card */}
-            <div className="absolute -bottom-8 -left-8 w-52 h-52 rounded-2xl overflow-hidden ring-4 ring-white shadow-2xl">
+            <div className="absolute -bottom-2 left-2 sm:-bottom-8 sm:-left-8 w-36 h-36 sm:w-52 sm:h-52 rounded-2xl overflow-hidden ring-4 ring-white shadow-2xl">
               <Image src="/images/about6.png" alt="Wixford design sprint" fill className="object-cover" sizes="220px" />
             </div>
           </div>

@@ -55,7 +55,7 @@ export default function CareerPage() {
           <nav className="flex justify-center gap-2 mb-8 text-sm text-gray-500 font-light">
             <Link href="/" className="hover:text-white transition">Home</Link> <span>/</span> <span className="text-white">Career</span>
           </nav>
-          <h1 className="text-6xl md:text-8xl font-bold leading-none">
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold leading-none">
             Build the <br /><span className="text-[#3b82f6] italic font-display font-normal">Technologies of Tomorrow</span>
           </h1>
         </div>
@@ -66,7 +66,7 @@ export default function CareerPage() {
         <div className="max-w-[1252px] mx-auto px-6">
             <div className="mb-16">
                 <span className="text-[#3b82f6] font-bold uppercase tracking-widest text-xs">Current Opportunities</span>
-                <h2 className="text-5xl font-bold mt-2">Join Our <span className="text-[#3b82f6]">Elite</span> Engineering Team</h2>
+                <h2 className="text-3xl sm:text-5xl font-bold mt-2">Join Our <span className="text-[#3b82f6]">Elite</span> Engineering Team</h2>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -113,20 +113,20 @@ export default function CareerPage() {
         <div className="max-w-[1252px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
                 <span className="text-[#3b82f6] font-bold uppercase tracking-widest text-xs">Our Culture</span>
-                <h2 className="text-5xl font-bold mt-4 mb-8">Innovation <span className="italic font-display font-normal">& Excellence</span></h2>
-                <p className="text-3xl font-medium leading-tight text-gray-300">
+                <h2 className="text-3xl sm:text-5xl font-bold mt-4 mb-8">Innovation <span className="italic font-display font-normal">& Excellence</span></h2>
+                <p className="text-xl sm:text-3xl font-medium leading-tight text-gray-300">
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-300">
                     At Wixford, we foster a culture of continuous learning and technical mastery. We believe in empowering our engineers to solve complex problems with creative, scalable solutions.
                     </span>
                 </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:-translate-y-1 transition-transform">
-                    <div className="text-4xl font-bold mb-2">4.9</div>
+                <div className="bg-gray-50 p-6 sm:p-8 rounded-3xl border border-gray-100 hover:-translate-y-1 transition-transform">
+                    <div className="text-3xl sm:text-4xl font-bold mb-2">4.9</div>
                     <p className="text-sm text-gray-500">Average Rating</p>
                 </div>
-                <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:-translate-y-1 transition-transform">
-                    <div className="text-4xl font-bold mb-2">150+</div>
+                <div className="bg-gray-50 p-6 sm:p-8 rounded-3xl border border-gray-100 hover:-translate-y-1 transition-transform">
+                    <div className="text-3xl sm:text-4xl font-bold mb-2">150+</div>
                     <p className="text-sm text-gray-500">Global Clients</p>
                 </div>
             </div>
@@ -138,7 +138,7 @@ export default function CareerPage() {
         <div className="max-w-[1252px] mx-auto px-6">
             <div className="text-center mb-20">
                 <span className="text-[#3b82f6] font-bold uppercase tracking-widest text-xs">Employee Benefits</span>
-                <h2 className="text-5xl font-bold mt-4 text-white">World-Class <span className="text-[#3b82f6] italic font-display">Benefits</span></h2>
+                <h2 className="text-3xl sm:text-5xl font-bold mt-4 text-white">World-Class <span className="text-[#3b82f6] italic font-display">Benefits</span></h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="benefit-card group" onMouseMove={(e) => {

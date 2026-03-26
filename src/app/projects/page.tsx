@@ -53,7 +53,7 @@ export default function Projects() {
           </nav>
 
           {/* Main Title */}
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
             <span className="font-display italic font-normal">A Portfolio of</span> Digital <br />
             Excellence & <span className="font-display italic font-normal">Innovation</span>
           </h1>
