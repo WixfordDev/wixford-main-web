@@ -1,13 +1,14 @@
 {
-  "/_error": "pages/_error.js",
-  "/AboutPage": "pages/AboutPage.js",
   "/_app": "pages/_app.js",
-  "/ContactPage": "pages/ContactPage.js",
-  "/CareerPage": "pages/CareerPage.js",
-  "/Home": "pages/Home.js",
-  "/PricingPage": "pages/PricingPage.js",
-  "/Projects": "pages/Projects.js",
-  "/ProjectDetailsPage": "pages/ProjectDetailsPage.js",
-  "/ServicesPage": "pages/ServicesPage.js",
-  "/_document": "pages/_document.js"
+  "/_error": "pages/_error.js",
+  "/AboutPage": "pages/AboutPage.html",
+  "/CareerPage": "pages/CareerPage.html",
+  "/ContactPage": "pages/ContactPage.html",
+  "/Home": "pages/Home.html",
+  "/PricingPage": "pages/PricingPage.html",
+  "/ProjectDetailsPage": "pages/ProjectDetailsPage.html",
+  "/Projects": "pages/Projects.html",
+  "/ServicesPage": "pages/ServicesPage.html",
+  "/_document": "pages/_document.js",
+  "/404": "pages/404.html"
 }
