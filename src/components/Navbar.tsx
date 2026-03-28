@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -10,6 +10,8 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const wixfordRef = useRef<HTMLDivElement>(null);
+  const [wixfordDims, setWixfordDims] = useState({ width: 120, height: 40 });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,6 +19,12 @@ export default function Navbar() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (!wixfordRef.current) return;
+    const { width, height } = wixfordRef.current.getBoundingClientRect();
+    setWixfordDims({ width, height });
   }, []);
 
   const navLinks = [
@@ -36,7 +44,7 @@ export default function Navbar() {
         initial={{ y: -60, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className={`md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 transition-all duration-300 ${
+        className={`md:hidden fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-4 py-3 transition-all duration-300 ${
           isScrolled || isMobileMenuOpen
             ? 'bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/5 shadow-lg'
             : 'bg-transparent'
@@ -44,11 +52,10 @@ export default function Navbar() {
       >
         <Link
           href="/"
-          className="flex items-center gap-2 group"
+          className="flex items-center"
           onClick={() => setIsMobileMenuOpen(false)}
         >
-          <span className="font-bold text-xl text-white tracking-tight">Wixford</span>
-          <div className="w-1.5 h-1.5 bg-[#3b82f6] rounded-full group-hover:scale-150 transition-transform" />
+          <img src="/images/logo.png" alt="Wixford" className="h-8 w-auto" />
         </Link>
 
         <button
@@ -65,56 +72,101 @@ export default function Navbar() {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`hidden md:flex fixed top-0 w-full z-50 justify-center transition-all duration-500 ${
+        className={`hidden md:flex fixed top-0 w-full z-[100] justify-center transition-all duration-500 ${
           isScrolled ? 'py-4' : 'py-8'
         }`}
       >
-        <div className="relative flex items-center">
+        {/* Pill wrapper */}
+        <div className="relative shadow-xl shadow-black/40">
+          {/* Single unified pill */}
+          <div className="relative flex items-center bg-[#0a0a0a] backdrop-blur-xl border border-white/10 rounded-full h-[60px] px-8 gap-1">
 
-          {/* Left Links Container */}
-          <div className="flex items-center bg-[#0a0a0a]/60 backdrop-blur-xl border border-white/5 rounded-l-full pl-8 pr-12 h-[56px] -mr-6 z-10 shadow-lg shadow-black/20">
-            {leftLinks.map((link) => {
-              const isActive = pathname === link.path;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.path}
-                  className={`relative group text-sm font-medium transition-colors mx-4 ${isActive ? 'text-white' : 'text-gray-300 hover:text-white'}`}
-                >
-                  {link.name}
-                  <span className={`absolute -bottom-1 left-0 h-px bg-[#3b82f6] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-                </Link>
-              );
-            })}
-          </div>
+          {/* Left Links */}
+          {leftLinks.map((link) => {
+            const isActive = pathname === link.path;
+            return (
+              <Link
+                key={link.name}
+                href={link.path}
+                className={`relative group text-base font-semibold transition-all duration-200 px-5 py-2 rounded-full ${
+                  isActive
+                    ? 'text-white bg-white/8'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#3b82f6] rounded-full" />
+                )}
+              </Link>
+            );
+          })}
+
+          {/* Divider */}
+          <div className="w-px h-6 bg-white/15 mx-3" />
 
           {/* Center Brand */}
-          <div className="relative z-20 flex flex-col items-center justify-center mx-2">
+          <div ref={wixfordRef} className="relative">
+            {(() => {
+              const { width: W, height: H } = wixfordDims;
+              const rx = H / 2;
+              const perimeter = Math.round(2 * Math.PI * rx + 2 * (W - H));
+              const beam = 50;
+              return (
+                <svg
+                  className="absolute inset-0 pointer-events-none"
+                  width={W} height={H}
+                  style={{ overflow: 'hidden', borderRadius: '9999px' }}
+                >
+                  <motion.rect
+                    x={1} y={1}
+                    width={W - 2} height={H - 2}
+                    rx={rx} ry={rx}
+                    fill="none"
+                    stroke="#3b82f6"
+                    strokeWidth={1.5}
+                    strokeDasharray={`${beam} ${perimeter - beam}`}
+                    strokeLinecap="round"
+                    style={{ filter: 'drop-shadow(0 0 4px #3b82f6)' }}
+                    initial={{ strokeDashoffset: 0 }}
+                    animate={{ strokeDashoffset: -perimeter }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
+                  />
+                </svg>
+              );
+            })()}
             <Link
               href="/"
-              className="group relative bg-[#0a0a0a] border border-white/10 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 hover:scale-105 hover:border-[#3b82f6]/50 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center gap-2 overflow-hidden"
+              className="group flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/8 transition-all duration-300 hover:scale-105"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-[#3b82f6]/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="relative z-10 font-bold tracking-tight">Wixford</span>
-              <div className="relative z-10 w-1.5 h-1.5 bg-[#3b82f6] rounded-full group-hover:scale-150 transition-transform" />
+              <span className="font-bold tracking-tight text-white text-base">Wixford</span>
+              <div className="w-2 h-2 bg-[#3b82f6] rounded-full group-hover:scale-150 transition-transform" />
             </Link>
           </div>
 
-          {/* Right Links Container */}
-          <div className="flex items-center bg-[#0a0a0a]/60 backdrop-blur-xl border border-white/5 rounded-r-full pr-8 pl-12 h-[56px] -ml-6 z-10 shadow-lg shadow-black/20">
-            {rightLinks.map((link) => {
-              const isActive = pathname === link.path;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.path}
-                  className={`relative group text-sm font-medium transition-colors mx-4 ${isActive ? 'text-white' : 'text-gray-300 hover:text-white'}`}
-                >
-                  {link.name}
-                  <span className={`absolute -bottom-1 left-0 h-px bg-[#3b82f6] transition-all duration-300 ${isActive ? 'w-full' : 'w-0 group-hover:w-full'}`} />
-                </Link>
-              );
-            })}
+          {/* Divider */}
+          <div className="w-px h-6 bg-white/15 mx-3" />
+
+          {/* Right Links */}
+          {rightLinks.map((link) => {
+            const isActive = pathname === link.path;
+            return (
+              <Link
+                key={link.name}
+                href={link.path}
+                className={`relative group text-base font-semibold transition-all duration-200 px-5 py-2 rounded-full ${
+                  isActive
+                    ? 'text-white bg-white/8'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {link.name}
+                {isActive && (
+                  <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#3b82f6] rounded-full" />
+                )}
+              </Link>
+            );
+          })}
           </div>
         </div>
       </motion.nav>

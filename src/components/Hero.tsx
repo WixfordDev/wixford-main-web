@@ -46,9 +46,9 @@ export default function Hero() {
         </p>
 
         <div ref={btnRef}>
-          <button className="bg-white text-black hover:bg-gray-200 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-colors duration-300">
+          <a href="/contact" className="inline-block bg-white text-black hover:bg-gray-200 px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg transition-colors duration-300">
             Partner With Us
-          </button>
+          </a>
         </div>
 
         {/* Floating Elements (Decorative) */}
