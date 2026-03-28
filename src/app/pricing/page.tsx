@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Check, Monitor, Code, Search, BarChart3, Clock, TrendingUp, PieChart, CheckCircle2, XCircle, Minus } from 'lucide-react';
 import { motion } from 'motion/react';
 import FAQ from '@/components/FAQ';
+import PremiumValueSection from '@/components/PremiumValueSection';
 
 const pricingFaqs = [
   { question: "How are projects priced at Wixford?", answer: "Pricing is based on scope, complexity, and timeline. After our discovery call, we provide a transparent fixed-price proposal with detailed breakdowns — no surprises, no hidden fees." },
@@ -84,7 +85,7 @@ export default function PricingPage() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="mb-8">
-                    <div className="text-4xl font-bold mb-2">$500 – $800</div>
+                    <div className="text-4xl font-bold mb-2">From-$500</div>
                     <p className="text-gray-400 text-sm">Ideal for small businesses</p>
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-[#60a5fa]">Starter Website</h3>
@@ -120,7 +121,7 @@ export default function PricingPage() {
                       Popular
                     </motion.div>
                     <div className="mb-8">
-                      <div className="text-5xl font-bold mb-2">$1,200 – $1,800</div>
+                      <div className="text-5xl font-bold mb-2">From-$1,200</div>
                       <p className="text-gray-400 text-sm">Ideal for growing companies</p>
                     </div>
                     <h3 className="text-2xl font-bold mb-2 text-[#60a5fa]">Business Website</h3>
@@ -144,7 +145,7 @@ export default function PricingPage() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="mb-8">
-                    <div className="text-4xl font-bold mb-2">$3,000 – $6,000</div>
+                    <div className="text-4xl font-bold mb-2">From-$3,000</div>
                     <p className="text-gray-400 text-sm">Ideal for startups / SaaS</p>
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-[#60a5fa]">Advanced Web App</h3>
@@ -181,7 +182,7 @@ export default function PricingPage() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="mb-8">
-                    <div className="text-4xl font-bold mb-2">$2,500 – $4,000</div>
+                    <div className="text-4xl font-bold mb-2">From-$2,500</div>
                     <p className="text-gray-400 text-sm">Ideal for simple app ideas</p>
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-[#60a5fa]">Basic Mobile App</h3>
@@ -217,7 +218,7 @@ export default function PricingPage() {
                       Popular
                     </motion.div>
                     <div className="mb-8">
-                      <div className="text-5xl font-bold mb-2">$5,000 – $8,000</div>
+                      <div className="text-5xl font-bold mb-2">From-$5,000</div>
                       <p className="text-gray-400 text-sm">Ideal for startups & MVPs</p>
                     </div>
                     <h3 className="text-2xl font-bold mb-2 text-[#60a5fa]">Standard Mobile App</h3>
@@ -242,7 +243,7 @@ export default function PricingPage() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <div className="mb-8">
-                    <div className="text-4xl font-bold mb-2">$10,000+</div>
+                    <div className="text-4xl font-bold mb-2">From-$7,000+</div>
                     <p className="text-gray-400 text-sm">Ideal for complex platforms</p>
                   </div>
                   <h3 className="text-xl font-bold mb-2 text-[#60a5fa]">Advanced Mobile App</h3>
@@ -265,37 +266,9 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* BONUS SECTION */}
-      <section className="bg-white text-black py-24 rounded-t-[40px] relative z-20 -mt-10">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold">Strategic Inclusions <br /> <span className="text-[#3b82f6] font-display italic font-normal">Worth $2,500+</span></h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Monitor, title: "Interactive Prototypes", desc: "Validate user flows before writing a single line of code.", value: "$500" },
-              { icon: Code, title: "Seamless Handoff", desc: "Pixel-perfect implementation guides for developers.", value: "$800" },
-              { icon: Search, title: "Technical SEO Audit", desc: "Ensure your platform is indexed and ranked correctly.", value: "$600" },
-              { icon: BarChart3, title: "Data Analytics", desc: "Setup of tracking pixels and conversion events.", value: "$600" }
-            ].map((bonus, index) => (
-              <motion.div
-                key={index}
-                className="p-8 bg-white rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 group relative overflow-hidden"
-                whileHover={{ y: -5 }}
-              >
-                <div className="absolute top-0 right-0 bg-blue-50 px-3 py-1 rounded-bl-xl text-xs font-bold text-[#3b82f6]">
-                    Value: {bonus.value}
-                </div>
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl mb-6 flex items-center justify-center text-[#3b82f6] group-hover:bg-[#3b82f6] group-hover:text-white transition-colors duration-300">
-                    <bonus.icon size={28} />
-                </div>
-                <h4 className="font-bold text-xl mb-3">{bonus.title}</h4>
-                <p className="text-gray-500 leading-relaxed">{bonus.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+       <PremiumValueSection />
+
+  
 
       {/* COMPARISON TABLE */}
       <section className="bg-gradient-to-b from-gray-50 to-white text-black py-32 px-4 relative z-10 overflow-hidden">
@@ -305,7 +278,7 @@ export default function PricingPage() {
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-100/40 rounded-full blur-3xl mix-blend-multiply opacity-70 animate-pulse delay-1000" style={{ willChange: 'opacity' }}></div>
         </div>
 
-        <div className="max-w-[1100px] mx-auto relative z-10">
+        <div className="container mx-auto relative z-10">
           <div className="text-center mb-20">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -447,6 +420,53 @@ export default function PricingPage() {
           </motion.div>
         </div>
       </section>
+
+
+          {/* BONUS SECTION */}
+  <section className="bg-[#0a0a0a] text-white py-24 rounded-t-[40px] relative z-20 -mt-10">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white">
+              Strategic Inclusions <br />
+              <span className="text-[#60a5fa] font-display italic font-normal">Worth $2,500+</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Monitor, title: "Interactive Prototypes", desc: "Validate user flows before writing a single line of code.", value: "$500" },
+              { icon: Code, title: "Seamless Handoff", desc: "Pixel-perfect implementation guides for developers.", value: "$800" },
+              { icon: Search, title: "Technical SEO Audit", desc: "Ensure your platform is indexed and ranked correctly.", value: "$600" },
+              { icon: BarChart3, title: "Data Analytics", desc: "Setup of tracking pixels and conversion events.", value: "$600" }
+            ].map((bonus, index) => (
+              <motion.div
+                key={index}
+                className="relative p-8 rounded-3xl border border-white/10 bg-[#111111] overflow-hidden group transition-all duration-300"
+                whileHover={{ y: -5, borderColor: 'rgba(59,130,246,0.3)' }}
+              >
+                {/* Value Badge — top right */}
+                <div className="absolute top-0 right-0 bg-[#1d3a6e] text-[#60a5fa] text-xs font-semibold px-3 py-1 rounded-bl-2xl rounded-tr-3xl">
+                  Value: {bonus.value}
+                </div>
+
+                {/* Icon Box */}
+                <div className="w-14 h-14 bg-[#1a1a2e] border border-white/10 rounded-2xl mb-8 flex items-center justify-center text-[#60a5fa] group-hover:bg-[#1d4ed8]/30 group-hover:border-[#3b82f6]/40 transition-all duration-300">
+                  <bonus.icon size={26} />
+                </div>
+
+                {/* Title */}
+                <h4 className="font-bold text-xl text-white mb-3 leading-snug">{bonus.title}</h4>
+
+                {/* Description */}
+                <p className="text-gray-400 text-sm leading-relaxed">{bonus.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+     
       <FAQ faqs={pricingFaqs} title="Pricing & Plans & Questions" />
     </div>
   );

@@ -120,7 +120,7 @@ export default function ContactPage() {
       <ContactFAQ />
 
       {/* EMAIL BOXES */}
-      <section className="border-t border-white/5 py-24">
+      <section className="border-t border-white/5">
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
             <div 
                 className="p-12 border border-white/10 rounded-[40px] group hover:border-[#3b82f6] transition cursor-pointer bg-white/5 hover:bg-[#3b82f6]/5"
@@ -139,33 +139,54 @@ export default function ContactPage() {
         </div>
       </section>
 
+
       {/* GLOBAL PRESENCE */}
-      <section className="relative py-32 bg-[#050505] -mb-10 pb-40">
-        <div className="container mx-auto px-6 relative z-10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div className="space-y-2">
-                    <h5 className="font-bold">United States</h5>
-                    <p className="text-gray-500 text-xs leading-relaxed">16 Cove Road, <br /> Mount Arlington, NJ 07856</p>
-                </div>
-                <div className="space-y-2">
-                    <h5 className="font-bold">Australia</h5>
-                    <p className="text-gray-500 text-xs leading-relaxed">155 Bennett Rd, <br /> St Clair NSW 2759</p>
-                </div>
-                <div className="space-y-2">
-                    <h5 className="font-bold">Italy</h5>
-                    <p className="text-gray-500 text-xs leading-relaxed">Via Bari, 9, <br /> 03043 Cassino, FR</p>
-                </div>
-                <div className="space-y-2">
-                    <h5 className="font-bold">Bangladesh</h5>
-                    <p className="text-gray-500 text-xs leading-relaxed">Banani, Plot 37, <br /> Road 11, Dhaka 1213</p>
-                </div>
-            </div>
+  <section
+        className="relative bg-[#050505] -mb-10 overflow-hidden"
+        style={{ minHeight: '800px' }}
+      >
+        {/* Video wrapper — fixed 800px so it always fills */}
+        <div className="absolute top-0 left-0 w-full" style={{ height: '1200px' }}>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full opacity-30 footer-video-mask scale-125"
+          >
+            <source src="https://github.com/designmonks/webvideos/raw/refs/heads/main/footer_globe.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
         </div>
-        {/* Rotating Globe Video Background */}
-        <div className="absolute bottom-0 left-0 w-full h-[400px] overflow-hidden pointer-events-none">
-            <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-30 footer-video-mask scale-125">
-                <source src="https://github.com/designmonks/webvideos/raw/refs/heads/main/footer_globe.mp4" type="video/mp4" />
-            </video>
+
+        {/* Content */}
+        <div className="container mx-auto px-6 relative z-10 pt-32 pb-40">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="space-y-2">
+              <h5 className="font-bold text-white">United States</h5>
+              <p className="text-gray-500 text-xs leading-relaxed">
+                16 Cove Road, <br /> Mount Arlington, NJ 07856
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h5 className="font-bold text-white">Australia</h5>
+              <p className="text-gray-500 text-xs leading-relaxed">
+                155 Bennett Rd, <br /> St Clair NSW 2759
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h5 className="font-bold text-white">Italy</h5>
+              <p className="text-gray-500 text-xs leading-relaxed">
+                Via Bari, 9, <br /> 03043 Cassino, FR
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h5 className="font-bold text-white">Bangladesh</h5>
+              <p className="text-gray-500 text-xs leading-relaxed">
+                Banani, Plot 37, <br /> Road 11, Dhaka 1213
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

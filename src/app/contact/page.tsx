@@ -144,7 +144,7 @@ export default function ContactPage() {
       </section>
 
       {/* GLOBAL PRESENCE */}
-      <section className="relative py-32 bg-[#050505] -mb-10 pb-40">
+      <section className="relative min-h-[800px] flex flex-col justify-center bg-[#050505] -mb-10 py-20">
         <div className="container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
                 <div className="space-y-2">
@@ -166,8 +166,8 @@ export default function ContactPage() {
             </div>
         </div>
         {/* Rotating Globe Video Background */}
-        <div className="absolute bottom-0 left-0 w-full h-[400px] overflow-hidden pointer-events-none">
-            <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-30 footer-video-mask scale-125">
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
+            <video autoPlay muted loop playsInline className="w-full h-full object-cover opacity-30">
                 <source src="https://github.com/designmonks/webvideos/raw/refs/heads/main/footer_globe.mp4" type="video/mp4" />
             </video>
         </div>

@@ -64,7 +64,7 @@ export default function GlobalFooter() {
             {/* Brand & Socials */}
             <div className="md:col-span-4 space-y-6">
               <div className="text-2xl font-black tracking-tight text-white">
-                Wix<span className="text-[#3b82f6]">ford</span>
+               <img src="/images/logo.png" alt="logo" />
               </div>
               <p className="text-white/50 text-sm sm:text-base leading-relaxed max-w-sm">
                 A premier digital technology firm delivering world-class software solutions to startups and Fortune 500 companies.
@@ -88,7 +88,7 @@ export default function GlobalFooter() {
               <div className="space-y-5">
                 <h4 className="text-xs font-bold uppercase tracking-widest text-white/30">Explore</h4>
                 <ul className="space-y-3 sm:space-y-4">
-                  {['Projects', 'Services', 'Pricing', 'About', 'Career'].map((item) => (
+                  {['Projects', 'Services', 'Pricing', 'About', 'Career','Contact'].map((item) => (
                     <li key={item}>
                       <a
                         href={`/${item.toLowerCase()}`}
