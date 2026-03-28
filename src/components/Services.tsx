@@ -74,7 +74,7 @@ export default function Services() {
               <Link
                 key={index}
                 href={`/services/${service.slug}`}
-                className="block border border-gray-100 p-6 sm:p-8 md:p-10 rounded-[24px] sm:rounded-[32px] hover:shadow-lg hover:border-gray-200 transition-all bg-white group"
+                className="block border shadow border-gray-100 p-6 sm:p-8 md:p-10 rounded-[24px] sm:rounded-[32px] hover:shadow-lg hover:border-[#3b82f6] transition-all bg-white group"
               >
                 {/* Top row: icon/image + number */}
                 <div className="flex items-center justify-between mb-5 sm:mb-6">

@@ -3,6 +3,15 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import FAQ from '@/components/FAQ';
+
+const aboutFaqs = [
+  { question: "Who is Wixford and what do you do?", answer: "Wixford is a premier digital technology firm specializing in mobile app development, web platforms, UI/UX design, and digital transformation. We partner with startups and Fortune 500 companies to build world-class software." },
+  { question: "How long has Wixford been operating?", answer: "Since 2018, Wixford has been transforming ideas into world-class software products. Over the years we've delivered 100+ projects across 4 continents for clients ranging from seed-stage startups to global enterprises." },
+  { question: "Where is the Wixford team based?", answer: "Our team operates globally with members across Asia, Europe, and North America. This distributed structure allows us to serve clients in any timezone with rapid response times." },
+  { question: "What makes Wixford different from other agencies?", answer: "We combine strategic thinking with exceptional execution. Unlike traditional agencies, we act as long-term digital partners — invested in your growth, not just your deliverables. Every decision is driven by measurable business impact." },
+  { question: "Do you work with international clients?", answer: "Yes. The majority of our clients are international. We've worked with businesses across the US, UK, UAE, Australia, Germany, and beyond — adapting to cultural and business contexts seamlessly." },
+];
 import Image from 'next/image';
 
 
@@ -491,7 +500,7 @@ export default function AboutPage() {
           </motion.div>
         </div>
       </section>
-
+      <FAQ faqs={aboutFaqs} title="About Wixford & Questions" />
     </div>
   );
 }

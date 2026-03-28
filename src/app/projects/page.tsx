@@ -3,6 +3,15 @@
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper/modules';
+import FAQ from '@/components/FAQ';
+
+const projectFaqs = [
+  { question: "What types of projects does Wixford build?", answer: "We build mobile apps, web platforms, SaaS dashboards, e-commerce solutions, and UI/UX design systems. From startups launching their first product to enterprises scaling existing platforms — we handle it all." },
+  { question: "How do I start a project with Wixford?", answer: "Simply reach out via our contact page. We'll schedule a discovery call to understand your goals, scope, and timeline — then provide a clear proposal with milestones and deliverables." },
+  { question: "Can I see detailed case studies for each project?", answer: "Yes. Click any project card to view the full case study including the problem, our approach, design system, workflow, and final outcome." },
+  { question: "Do you work with international clients?", answer: "Absolutely. Our team works with clients across North America, Europe, the Middle East, and Asia. We adapt to your timezone and communication preferences." },
+  { question: "How do you handle revisions during a project?", answer: "We include structured revision rounds in every project. Our iterative process ensures your feedback is incorporated at each milestone before moving forward." },
+];
 import { motion } from 'motion/react';
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -144,6 +153,7 @@ export default function Projects() {
 
         </div>
       </section>
+      <FAQ faqs={projectFaqs} title="Projects & Process & Questions" />
     </div>
   );
 }

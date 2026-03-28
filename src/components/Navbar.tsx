@@ -76,97 +76,91 @@ export default function Navbar() {
           isScrolled ? 'py-4' : 'py-8'
         }`}
       >
-        {/* Pill wrapper */}
-        <div className="relative shadow-xl shadow-black/40">
+        <div className="relative shadow-2xl border-white shadow-black/0">
           {/* Single unified pill */}
           <div className="relative flex items-center bg-[#0a0a0a] backdrop-blur-xl border border-white/10 rounded-full h-[60px] px-8 gap-1">
 
-          {/* Left Links */}
-          {leftLinks.map((link) => {
-            const isActive = pathname === link.path;
-            return (
-              <Link
-                key={link.name}
-                href={link.path}
-                className={`relative group text-base font-semibold transition-all duration-200 px-5 py-2 rounded-full ${
-                  isActive
-                    ? 'text-white bg-white/8'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {link.name}
-                {isActive && (
-                  <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#3b82f6] rounded-full" />
-                )}
-              </Link>
-            );
-          })}
-
-          {/* Divider */}
-          <div className="w-px h-6 bg-white/15 mx-3" />
-
-          {/* Center Brand */}
-          <div ref={wixfordRef} className="relative">
-            {(() => {
-              const { width: W, height: H } = wixfordDims;
-              const rx = H / 2;
-              const perimeter = Math.round(2 * Math.PI * rx + 2 * (W - H));
-              const beam = 50;
+            {/* Left Links */}
+            {leftLinks.map((link) => {
+              const isActive = pathname === link.path;
               return (
-                <svg
-                  className="absolute inset-0 pointer-events-none"
-                  width={W} height={H}
-                  style={{ overflow: 'hidden', borderRadius: '9999px' }}
+                <Link
+                  key={link.name}
+                  href={link.path}
+                  className={`relative group text-base font-semibold transition-all duration-200 px-5 py-2 rounded-full ${
+                    isActive ? 'text-white bg-white/8' : 'text-gray-300 hover:text-white hover:bg-white/5'
+                  }`}
                 >
-                  <motion.rect
-                    x={1} y={1}
-                    width={W - 2} height={H - 2}
-                    rx={rx} ry={rx}
-                    fill="none"
-                    stroke="#3b82f6"
-                    strokeWidth={1.5}
-                    strokeDasharray={`${beam} ${perimeter - beam}`}
-                    strokeLinecap="round"
-                    style={{ filter: 'drop-shadow(0 0 4px #3b82f6)' }}
-                    initial={{ strokeDashoffset: 0 }}
-                    animate={{ strokeDashoffset: -perimeter }}
-                    transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
-                  />
-                </svg>
+                  {link.name}
+                  {isActive && (
+                    <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#3b82f6] rounded-full" />
+                  )}
+                </Link>
               );
-            })()}
-            <Link
-              href="/"
-              className="group flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/8 transition-all duration-300 hover:scale-105"
-            >
-              <span className="font-bold tracking-tight text-white text-base">Wixford</span>
-              <div className="w-2 h-2 bg-[#3b82f6] rounded-full group-hover:scale-150 transition-transform" />
-            </Link>
-          </div>
+            })}
 
-          {/* Divider */}
-          <div className="w-px h-6 bg-white/15 mx-3" />
+            {/* Divider */}
+            <div className="w-px h-6 bg-white/15 mx-3" />
 
-          {/* Right Links */}
-          {rightLinks.map((link) => {
-            const isActive = pathname === link.path;
-            return (
+            {/* Center Brand */}
+            <div ref={wixfordRef} className="relative rounded-full overflow-hidden">
+              {(() => {
+                const { width: W, height: H } = wixfordDims;
+                const rx = H / 2;
+                const perimeter = Math.round(2 * Math.PI * rx + 2 * (W - H));
+                const beam = 50;
+                return (
+                  <svg
+                    className="absolute inset-0 pointer-events-none"
+                    width={W} height={H}
+                    style={{ overflow: 'hidden' }}
+                  >
+                    <motion.rect
+                      x={1} y={1}
+                      width={W - 2} height={H - 2}
+                      rx={rx} ry={rx}
+                      fill="none"
+                      stroke="#3b82f6"
+                      strokeWidth={1.5}
+                      strokeDasharray={`${beam} ${perimeter - beam}`}
+                      strokeLinecap="round"
+                      initial={{ strokeDashoffset: 0 }}
+                      animate={{ strokeDashoffset: -perimeter }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
+                    />
+                  </svg>
+                );
+              })()}
               <Link
-                key={link.name}
-                href={link.path}
-                className={`relative group text-base font-semibold transition-all duration-200 px-5 py-2 rounded-full ${
-                  isActive
-                    ? 'text-white bg-white/8'
-                    : 'text-gray-300 hover:text-white hover:bg-white/5'
-                }`}
+                href="/"
+                className="group flex items-center gap-2.5 px-5 py-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/8 transition-all duration-300 hover:scale-105"
               >
-                {link.name}
-                {isActive && (
-                  <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#3b82f6] rounded-full" />
-                )}
+                <span className="font-bold tracking-tight text-white text-base">Wixford</span>
+                <div className="w-2 h-2 bg-[#3b82f6] rounded-full group-hover:scale-150 transition-transform" />
               </Link>
-            );
-          })}
+            </div>
+
+            {/* Divider */}
+            <div className="w-px h-6 bg-white/15 mx-3" />
+
+            {/* Right Links */}
+            {rightLinks.map((link) => {
+              const isActive = pathname === link.path;
+              return (
+                <Link
+                  key={link.name}
+                  href={link.path}
+                  className={`relative group text-base font-semibold transition-all duration-200 px-5 py-2 rounded-full ${
+                    isActive ? 'text-white bg-white/8' : 'text-gray-300 hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <span className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-[#3b82f6] rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </motion.nav>

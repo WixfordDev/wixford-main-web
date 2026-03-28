@@ -3,6 +3,16 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, EffectCards } from 'swiper/modules';
+import FAQ from '@/components/FAQ';
+
+const serviceFaqs = [
+  { question: "What services does Wixford offer?", answer: "We offer mobile app development (iOS & Android), web development, UI/UX design, SaaS platform engineering, digital transformation consulting, and ongoing product support." },
+  { question: "Do you handle both design and development?", answer: "Yes. We are a full-service digital studio. Our teams collaborate on strategy, design, development, and launch — ensuring a seamless product experience from concept to deployment." },
+  { question: "Can you work with our existing tech stack?", answer: "Absolutely. We integrate with your current infrastructure, APIs, and tools. Our engineers are proficient across React, Next.js, Node.js, Flutter, Swift, Kotlin, and more." },
+  { question: "Do you offer UI/UX design as a standalone service?", answer: "Yes. If you already have a development team, we can provide UI/UX design, prototyping, user research, and design systems as a standalone engagement." },
+  { question: "What industries do you specialize in?", answer: "We work across real estate, health & fitness, food & dining, home improvement, fintech, e-commerce, and enterprise SaaS — bringing deep domain knowledge to every project." },
+  { question: "How do I know which service is right for me?", answer: "Book a free consultation. We'll review your goals and recommend the most effective service combination for your budget and timeline." },
+];
 import { motion } from 'motion/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -117,6 +127,7 @@ export default function ServicesPage() {
           </div>
         </div>
       </section>
+      <FAQ faqs={serviceFaqs} title="Services & Capabilities & Questions" />
     </div>
   );
 }

@@ -3,6 +3,16 @@
 import React, { useState } from 'react';
 import { Check, Monitor, Code, Search, BarChart3, Clock, TrendingUp, PieChart, CheckCircle2, XCircle, Minus } from 'lucide-react';
 import { motion } from 'motion/react';
+import FAQ from '@/components/FAQ';
+
+const pricingFaqs = [
+  { question: "How are projects priced at Wixford?", answer: "Pricing is based on scope, complexity, and timeline. After our discovery call, we provide a transparent fixed-price proposal with detailed breakdowns — no surprises, no hidden fees." },
+  { question: "Are there any hidden fees?", answer: "Never. We believe in full pricing transparency. Everything is outlined in your proposal — from design and development to testing, revisions, and delivery." },
+  { question: "Do you offer payment plans?", answer: "Yes. We typically structure payments as milestone-based installments — an initial deposit, payments at key milestones, and a final payment upon delivery." },
+  { question: "What's included in each plan?", answer: "Each plan includes strategy, design, development, testing, and launch support. Higher-tier plans include additional features, dedicated teams, priority support, and extended maintenance." },
+  { question: "Can I upgrade my plan mid-project?", answer: "Yes. If your scope expands or your needs change, we can adjust the plan. We'll provide an updated proposal reflecting any changes in cost and timeline." },
+  { question: "Do you offer refunds?", answer: "We stand behind our work. If we fail to deliver agreed milestones, we'll make it right. Refund policies are defined clearly in our project agreement." },
+];
 import Link from 'next/link';
 
 export default function PricingPage() {
@@ -437,6 +447,7 @@ export default function PricingPage() {
           </motion.div>
         </div>
       </section>
+      <FAQ faqs={pricingFaqs} title="Pricing & Plans & Questions" />
     </div>
   );
 }

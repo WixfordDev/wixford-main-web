@@ -2,6 +2,15 @@
 
 import React from 'react';
 import Link from 'next/link';
+import FAQ from '@/components/FAQ';
+
+const contactFaqs = [
+  { question: "How quickly will you respond to my inquiry?", answer: "We respond to all inquiries within 24 hours on business days. For urgent projects, feel free to mention your timeline and we'll prioritize accordingly." },
+  { question: "What information should I include in my message?", answer: "Share a brief description of your project, your goals, estimated timeline, and any relevant links or references. The more context you provide, the more specific and helpful our response will be." },
+  { question: "Do you offer free consultations?", answer: "Yes. We offer a complimentary 30-minute discovery call for all new project inquiries. This gives us a chance to understand your needs and determine how we can best help." },
+  { question: "What happens after I submit the contact form?", answer: "Our team reviews your submission and reaches out within 24 hours to confirm receipt and schedule an initial discovery call. From there, we'll outline next steps and a proposed timeline." },
+  { question: "Can I schedule a call directly?", answer: "Yes. After submitting the form, you'll receive a link to book a call at a time that suits you. Alternatively, mention your preferred time in the message and we'll coordinate directly." },
+];
 
 export default function ContactPage() {
   const handleCopyEmail = (email: string) => {
@@ -163,6 +172,7 @@ export default function ContactPage() {
             </video>
         </div>
       </section>
+      <FAQ faqs={contactFaqs} title="Contact & Support & Questions" />
     </div>
   );
 }

@@ -7,9 +7,11 @@ import Services from '@/components/Services';
 import VideoShowcase from '@/components/VideoShowcase';
 import WhatWeDo from '@/components/WhatWeDo';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import ClientSuccessStories from '@/components/ClientSuccessStories';
 import Pricing from '@/components/Pricing';
 import FAQ from '@/components/FAQ';
 import WixfordSection from '@/components/WixfordSection';
+import EmployeeTestimonials from '@/components/EmployeeTestimonials';
 
 export default function Home() {
   return (
@@ -21,6 +23,8 @@ export default function Home() {
         <VideoShowcase />
         <WhatWeDo />
         <WhyChooseUs />
+        <ClientSuccessStories />
+        {/* <EmployeeTestimonials /> */}
         {/* <Pricing /> */}
         <WixfordSection />
         <FAQ />

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Plus, Minus } from 'lucide-react';
 
-const faqs = [
+const defaultFaqs = [
   {
     question: "How long does it take to develop a mobile app or website?",
     answer: "Project timelines depend on complexity, features, and scope. A standard website typically takes 3–5 weeks, while a custom mobile app may take 6–12 weeks. After our discovery phase, we provide a clear project roadmap with defined milestones."
@@ -33,7 +33,18 @@ const faqs = [
   }
 ];
 
-export default function FAQ() {
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQProps {
+  faqs?: FAQItem[];
+  title?: string;
+  dark?: boolean;
+}
+
+export default function FAQ({ faqs = defaultFaqs, title = 'Common Questions & Answers', dark = false }: FAQProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
@@ -41,7 +52,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white text-black rounded-[40px] mx-2 sm:mx-4 my-6 sm:my-10 relative z-10">
+    <section className={`py-16 md:py-24 rounded-[40px] mx-2 sm:mx-4 my-6 sm:my-10 relative z-10 ${dark ? 'bg-[#0a0a0a] text-white' : 'bg-white text-black'}`}>
       <div className="container mx-auto px-4 sm:px-6 md:px-8 max-w-4xl">
 
         {/* Header */}
@@ -50,7 +61,7 @@ export default function FAQ() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block bg-black text-white px-4 py-1.5 rounded-full text-sm font-medium mb-5 sm:mb-6 tracking-wide uppercase"
+            className={`inline-block px-4 py-1.5 rounded-full text-sm font-medium mb-5 sm:mb-6 tracking-wide uppercase ${dark ? 'bg-white/10 text-white border border-white/10' : 'bg-black text-white'}`}
           >
             FAQ
           </motion.div>
@@ -61,7 +72,14 @@ export default function FAQ() {
             transition={{ delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight"
           >
-            Common Questions & <span className="text-[#3b82f6] font-display italic font-normal">Answers</span>
+            {title.includes('&') ? (
+              <>
+                {title.split('&')[0]}&{' '}
+                <span className="text-[#3b82f6] font-display italic font-normal">{title.split('& ')[1]}</span>
+              </>
+            ) : (
+              title
+            )}
           </motion.h2>
         </div>
 
@@ -74,16 +92,16 @@ export default function FAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="border-b border-gray-200"
+              className={`border-b ${dark ? 'border-white/10' : 'border-gray-200'}`}
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full flex justify-between items-center py-4 sm:py-6 text-left group focus:outline-none"
               >
-                <span className={`text-base sm:text-lg md:text-xl lg:text-2xl font-bold transition-colors duration-300 pr-4 ${openIndex === index ? 'text-[#3b82f6]' : 'group-hover:text-[#3b82f6]'}`}>
+                <span className={`text-base sm:text-lg md:text-xl lg:text-2xl font-bold transition-colors duration-300 pr-4 ${openIndex === index ? 'text-[#3b82f6]' : dark ? 'text-white group-hover:text-[#3b82f6]' : 'group-hover:text-[#3b82f6]'}`}>
                   {faq.question}
                 </span>
-                <span className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center transition-all duration-300 ml-2 sm:ml-4 ${openIndex === index ? 'bg-[#3b82f6] border-[#3b82f6] text-white rotate-180' : 'border-gray-300 group-hover:border-[#3b82f6] group-hover:text-[#3b82f6]'}`}>
+                <span className={`flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-full border flex items-center justify-center transition-all duration-300 ml-2 sm:ml-4 ${openIndex === index ? 'bg-[#3b82f6] border-[#3b82f6] text-white rotate-180' : dark ? 'border-white/20 text-white/60 group-hover:border-[#3b82f6] group-hover:text-[#3b82f6]' : 'border-gray-300 group-hover:border-[#3b82f6] group-hover:text-[#3b82f6]'}`}>
                   {openIndex === index ? <Minus size={16} /> : <Plus size={16} />}
                 </span>
               </button>
@@ -97,7 +115,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <p className="text-gray-600 text-base sm:text-lg leading-relaxed pb-6 sm:pb-8 pr-4 sm:pr-12">
+                    <p className={`text-base sm:text-lg leading-relaxed pb-6 sm:pb-8 pr-4 sm:pr-12 ${dark ? 'text-gray-400' : 'text-gray-600'}`}>
                       {faq.answer}
                     </p>
                   </motion.div>

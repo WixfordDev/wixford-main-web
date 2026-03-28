@@ -3,6 +3,15 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import Link from 'next/link';
+import FAQ from '@/components/FAQ';
+
+const careerFaqs = [
+  { question: "What's it like working at Wixford?", answer: "Wixford is a fast-paced, collaborative environment where ownership and creativity are encouraged. Our team is passionate about building impactful products, continuous learning, and delivering excellence for every client." },
+  { question: "Do you offer remote positions?", answer: "Yes. Most of our roles are remote-friendly. We believe in hiring the best talent regardless of location, and we have team members working across multiple countries and timezones." },
+  { question: "What does the hiring process look like?", answer: "Our process typically includes an application review, a portfolio/skills assessment, one or two interviews, and a paid trial task. The entire process usually takes 2–3 weeks." },
+  { question: "What benefits does Wixford offer?", answer: "We offer competitive salaries, flexible working hours, remote work, health coverage, equipment budgets, professional development allowances, and a collaborative team culture that values growth." },
+  { question: "Do you hire junior or entry-level talent?", answer: "Yes. We value potential as much as experience. If you're early in your career but demonstrate strong skills, curiosity, and a growth mindset — we'd love to hear from you." },
+];
 
 export default function CareerPage() {
   return (
@@ -171,6 +180,7 @@ export default function CareerPage() {
             </div>
         </div>
       </section>
+      <FAQ faqs={careerFaqs} title="Career & Culture & Questions" />
     </div>
   );
 }
