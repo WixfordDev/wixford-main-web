@@ -1,14 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/AboutPage": "pages/AboutPage.html",
-  "/CareerPage": "pages/CareerPage.html",
-  "/ContactPage": "pages/ContactPage.html",
-  "/Home": "pages/Home.html",
-  "/PricingPage": "pages/PricingPage.html",
-  "/ProjectDetailsPage": "pages/ProjectDetailsPage.html",
-  "/Projects": "pages/Projects.html",
-  "/ServicesPage": "pages/ServicesPage.html",
-  "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
-}
+{}
