@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.designmonks.co)"
+      "WebFetch(domain:www.designmonks.co)",
+      "Bash(wc -l src/components/*.tsx src/app/**/*.tsx)"
     ]
   }
 }

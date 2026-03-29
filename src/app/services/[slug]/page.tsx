@@ -143,8 +143,9 @@ const serviceData: Record<string, {
   },
 };
 
-export default function ServiceDetailPage({ params }: { params: { slug: string } }) {
-  const service = serviceData[params.slug];
+export default function ServiceDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = React.use(params);
+  const service = serviceData[slug];
   if (!service) notFound();
 
   const Icon = service.icon;
