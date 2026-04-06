@@ -73,7 +73,7 @@ export default function WhatWeDo() {
                 transition={{ duration: 0.7, ease: 'easeOut' }}
                 className="flex-1 space-y-5 sm:space-y-6 w-full"
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-[#3b82f6] font-bold text-base sm:text-xl">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl flex items-center font-bold justify-center text-[#949ba6]   text-base text-2xl sm:text-3xl md:text-4xl">
                   0{index + 1}
                 </div>
                 <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold">{service.title}</h3>
