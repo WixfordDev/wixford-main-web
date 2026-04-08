@@ -15,6 +15,7 @@ const pricingFaqs = [
   { question: "Do you offer refunds?", answer: "We stand behind our work. If we fail to deliver agreed milestones, we'll make it right. Refund policies are defined clearly in our project agreement." },
 ];
 import Link from 'next/link';
+import PricingFeatures from '@/components/PricingFeatures';
 
 export default function PricingPage() {
   const [activeMainTab, setActiveMainTab] = useState('website');
@@ -266,7 +267,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-       <PremiumValueSection />
+       {/* <PremiumValueSection /> */}
+       <PricingFeatures/>
 
   
 
