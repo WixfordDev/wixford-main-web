@@ -69,7 +69,7 @@ export default function ContactPage() {
             </div>
             <div className="rounded-[32px] overflow-hidden border border-white/10 shadow-2xl">
                 <video autoPlay muted loop playsInline className="w-full">
-                    <source src="https://github.com/designmonks/Contact-US-Video/raw/refs/heads/main/DM%20Intro.mp4" type="video/mp4" />
+                    <source src="/images/wixfordv.mp4" type="video/mp4" />
                 </video>
             </div>
           </div>

@@ -24,6 +24,10 @@
   --text-secondary: rgba(250, 250, 250, 0.7);
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--midnight-blue);
   color: var(--text-main);

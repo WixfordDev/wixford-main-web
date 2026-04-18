@@ -48,8 +48,8 @@ export default function ServicesPage() {
       <WhatWeDo /> 
 
       {/* WHY US SECTION */}
-      {/* <section className="bg-white py-24 rounded-3xl border-t border-gray-100 text-black">
-        <div className="max-w-[1252px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="bg-white py-24 rounded-3xl border-t border-gray-100 text-black">
+        <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="bg-blue-100 text-[#3b82f6] px-4 py-1.5 rounded-full text-sm font-bold mb-6 inline-block">Why Industry Leaders Choose Us</span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Because Our Premium <span className="font-display italic font-normal">Engineering</span> Always <span className="font-display italic font-normal">Pays</span> for Itself</h2>
@@ -59,13 +59,13 @@ export default function ServicesPage() {
               <img src="https://cdn.prod.website-files.com/672a72b52eb5f37692d645a9/67adba6a3ab018a0349e2bc2_CTA%20Arrow%20(2).svg" className="ml-3 w-4 group-hover:translate-x-1 transition-transform invert" alt="Arrow" />
             </button>
           </div>
-          <div className="relative rounded-[32px] overflow-hidden aspect-[5/4] shadow-2xl">
-            <video autoPlay muted loop playsInline className="w-full h-full object-cover">
-              <source src="https://github.com/designmonks/Contact-US-Video/raw/refs/heads/main/DM%20Intro%205x4.mp4" type="video/mp4" />
-            </video>
-          </div>
+            <div className="rounded-[32px] overflow-hidden border border-white/10 shadow-2xl">
+                <video autoPlay muted loop playsInline className="w-full">
+                    <source src="/images/wixfordv.mp4" type="video/mp4" />
+                </video>
+            </div>
         </div>
-      </section> */}
+      </section>
 
       {/* TESTIMONIAL CARDS (SWIPER) */}
       <section className="bg-[#fafafa] py-24 text-black">

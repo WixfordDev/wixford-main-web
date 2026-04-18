@@ -218,16 +218,14 @@ export default function WorkNookTestimonials() {
   return (
     <section style={{
       background: '#EEEEF0',
-      padding: '60px 40px',
       fontFamily: "'DM Sans', sans-serif",
-    }}>
+    }} className="px-4 sm:px-10 py-10 sm:py-15">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600&display=swap');
       `}</style>
 
       {/* ── Mosaic Grid ── */}
-      <div className='' style={{
-        display: 'flex',
+      <div className='hidden sm:flex' style={{
         gap: 8,
         justifyContent: 'center',
         alignItems: 'center',
@@ -347,13 +345,7 @@ export default function WorkNookTestimonials() {
       </div>
 
       {/* ── Testimonial Cards ── */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(3, 1fr)',
-        gap: 20,
-        maxWidth: 960,
-        margin: '0 auto',
-      }}>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-240 mx-auto">
         {testimonials.map((t, i) => (
           <TestimonialCard key={i} {...t} />
         ))}

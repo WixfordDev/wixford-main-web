@@ -66,20 +66,20 @@ export default function VideoShowcase() {
                     loop
                     playsInline
                 >
-                    <source src="/images/wixford.mp4" type="video/mp4" />
+                    <source src="/images/wixfordv.mp4" type="video/mp4" />
                 </video>
                 
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
                 {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center z-20">
+                {/* <div className="absolute inset-0 flex items-center justify-center z-20">
                     <div className="w-20 h-20 md:w-24 md:h-24 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-[0_0_40px_rgba(59,130,246,0.3)]">
                         <div className="w-14 h-14 md:w-16 md:h-16 bg-[#3b82f6] rounded-full flex items-center justify-center shadow-lg pl-1">
                             <Play className="w-6 h-6 md:w-8 md:h-8 text-white fill-current" />
                         </div>
                     </div>
-                </div>
+                </div> */}
 
             </div>
         </motion.div>
