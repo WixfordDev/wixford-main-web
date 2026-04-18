@@ -124,17 +124,17 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
             <div 
                 className="p-12 border border-white/10 rounded-[40px] group hover:border-[#3b82f6] transition cursor-pointer bg-white/5 hover:bg-[#3b82f6]/5"
-                onClick={() => handleCopyEmail('hello@designmonks.co')}
+                onClick={() => handleCopyEmail('contact@wixford.com')}
             >
                 <h4 className="text-gray-400 text-sm mb-2">Business Inquiries</h4>
-                <div className="text-2xl font-bold group-hover:text-[#60a5fa] transition">hello@designmonks.co</div>
+                <div className="text-2xl font-bold group-hover:text-[#60a5fa] transition">contact@wixford.com</div>
             </div>
             <div 
                 className="p-12 border border-white/10 rounded-[40px] group hover:border-[#3b82f6] transition cursor-pointer bg-white/5 hover:bg-[#3b82f6]/5"
-                onClick={() => handleCopyEmail('career@designmonks.co')}
+                onClick={() => handleCopyEmail('info@wixford.com')}
             >
                 <h4 className="text-gray-400 text-sm mb-2">Careers & Recruitment</h4>
-                <div className="text-2xl font-bold group-hover:text-[#60a5fa] transition">career@designmonks.co</div>
+                <div className="text-2xl font-bold group-hover:text-[#60a5fa] transition">info@wixford.com</div>
             </div>
         </div>
       </section>

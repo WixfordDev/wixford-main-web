@@ -48,7 +48,7 @@ export default function ServicesPage() {
       <WhatWeDo /> 
 
       {/* WHY US SECTION */}
-      <section className="bg-white py-24 rounded-3xl border-t border-gray-100 text-black">
+      {/* <section className="bg-white py-24 rounded-3xl border-t border-gray-100 text-black">
         <div className="max-w-[1252px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="bg-blue-100 text-[#3b82f6] px-4 py-1.5 rounded-full text-sm font-bold mb-6 inline-block">Why Industry Leaders Choose Us</span>
@@ -65,7 +65,7 @@ export default function ServicesPage() {
             </video>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* TESTIMONIAL CARDS (SWIPER) */}
       <section className="bg-[#fafafa] py-24 text-black">

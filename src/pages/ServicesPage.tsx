@@ -84,11 +84,11 @@ export default function ServicesPage() {
       </section>
 
       {/* WHY US SECTION */}
-      <section className="bg-white py-24 border-t border-gray-100 text-black">
+      {/* <section className="bg-white py-24 border-t border-gray-100 text-black">
         <div className="max-w-[1252px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="bg-blue-100 text-[#3b82f6] px-4 py-1.5 rounded-full text-sm font-bold mb-6 inline-block">Why Industry Leaders Choose Us</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Because Our Premium <span className="font-display italic font-normal">Engineering</span> Always <span className="font-display italic font-normal">Pays</span> for Itself</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">Because Our Premium<span className="font-display italic font-normal">Engineering</span> Always <span className="font-display italic font-normal">Pays</span> for Itself</h2>
             <p className="text-gray-600 text-lg mb-8 leading-relaxed">We don't just write code; we build digital assets that generate revenue and streamline operations. You get momentum 20x faster.</p>
             <button className="bg-black text-white px-8 py-4 rounded-xl flex items-center group font-medium hover:bg-[#3b82f6] transition-colors">
               Partner With Us 
@@ -101,7 +101,7 @@ export default function ServicesPage() {
             </video>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* TESTIMONIAL CARDS (SWIPER) */}
       <section className="bg-[#fafafa] py-24 text-black">
