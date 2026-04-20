@@ -37,8 +37,9 @@ export default function Hero() {
         </div>
 
         <h1 ref={titleRef} className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-[1.1] mb-5 sm:mb-6 tracking-tight">
-          Engineering <span className="font-display italic font-light">Digital</span> Dominance for <br className="hidden sm:block" />
-          Global <span className="text-[#3b82f6] text-shadow-blue">Enterprises</span>
+          Engineering <span className="font-display italic font-light text-[#3b82f6]">Digital</span> Dominance  <br className="hidden sm:block" />
+          for
+          Global <span className="text-shadow-blue">Enterprises</span>
         </h1>
 
         <p ref={textRef} className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] max-w-xl sm:max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed">
