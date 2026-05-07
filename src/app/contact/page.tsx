@@ -247,27 +247,27 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             <div className="space-y-2">
-              <h5 className="font-bold">United States</h5>
+              <h5 className="font-bold">Bangladesh</h5>
               <p className="text-gray-500 text-xs leading-relaxed">
-                16 Cove Road, <br /> Mount Arlington, NJ 07856
+                Rampura Banasree, <br />Block-F, Road 3, Dhaka 1213
               </p>
             </div>
             <div className="space-y-2">
-              <h5 className="font-bold">Australia</h5>
+              <h5 className="font-bold">New Zealand</h5>
               <p className="text-gray-500 text-xs leading-relaxed">
                 155 Bennett Rd, <br /> St Clair NSW 2759
               </p>
             </div>
             <div className="space-y-2">
-              <h5 className="font-bold">Italy</h5>
+              <h5 className="font-bold">USA</h5>RJXF+WJ9 Chester, Pennsylvania, USA
               <p className="text-gray-500 text-xs leading-relaxed">
-                Via Bari, 9, <br /> 03043 Cassino, FR
+                RJXF+WJ9 Chester, Pennsylvania, USA
               </p>
             </div>
             <div className="space-y-2">
-              <h5 className="font-bold">Bangladesh</h5>
+              <h5 className="font-bold">UK</h5> 
               <p className="text-gray-500 text-xs leading-relaxed">
-                Banani, Plot 37, <br /> Road 11, Dhaka 1213
+                Manchester M11 3FF, <br /> Gate 13, Etihad Campus, Rowsley St, United Kingdom
               </p>
             </div>
           </div>

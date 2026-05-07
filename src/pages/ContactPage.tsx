@@ -163,9 +163,9 @@ export default function ContactPage() {
         <div className="container mx-auto px-6 relative z-10 pt-32 pb-40">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div className="space-y-2">
-              <h5 className="font-bold text-white">United States</h5>
+              <h5 className="font-bold text-white">Bangladesh</h5>
               <p className="text-gray-500 text-xs leading-relaxed">
-                16 Cove Road, <br /> Mount Arlington, NJ 07856
+                Rampura Banasree, <br />Block-F, Road 3, Dhaka 1213
               </p>
             </div>
             <div className="space-y-2">
