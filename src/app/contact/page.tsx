@@ -259,9 +259,9 @@ export default function ContactPage() {
               </p>
             </div>
             <div className="space-y-2">
-              <h5 className="font-bold">USA</h5>RJXF+WJ9 Chester, Pennsylvania, USA
+              <h5 className="font-bold">USA</h5> 
               <p className="text-gray-500 text-xs leading-relaxed">
-                RJXF+WJ9 Chester, Pennsylvania, USA
+                RJXF+WJ9 Chester, <br /> Pennsylvania, USA
               </p>
             </div>
             <div className="space-y-2">

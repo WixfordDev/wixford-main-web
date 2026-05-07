@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Linkedin, Twitter, Dribbble, Instagram, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function GlobalFooter() {
@@ -67,16 +67,25 @@ export default function GlobalFooter() {
                <img src="/images/logo.png" alt="logo" />
               </div>
               <p className="text-white/50 text-sm sm:text-base leading-relaxed max-w-sm">
-                A premier digital technology firm delivering world-class software solutions to startups and Fortune 500 companies.
+              We provide modern Web App, Mobile App, and UI/UX design services that help businesses become more powerful, engaging, and user-friendly in the digital world, delivering innovative digital experiences tailored to growth, performance, and long-term success.
               </p>
               <div className="flex gap-3 pt-2">
-                {['Li', 'Be', 'Dr', 'Tw'].map((social, i) => (
+                {[
+                  { icon: <Linkedin size={16} />, href: 'https://www.linkedin.com/company/wixford', label: 'LinkedIn' },
+                  { icon: <Twitter size={16} />, href: 'https://twitter.com/wixford', label: 'Twitter' },
+                  { icon: <Dribbble size={16} />, href: 'https://dribbble.com/wixford', label: 'Dribbble' },
+                  { icon: <Instagram size={16} />, href: 'https://instagram.com/wixford', label: 'Instagram' },
+                  { icon: <Facebook size={16} />, href: 'https://facebook.com/wixford', label: 'Facebook' },
+                ].map((social, i) => (
                   <a
                     key={i}
-                    href="#"
-                    className="w-10 h-10 border border-white/15 rounded-full flex items-center justify-center text-sm font-medium text-white/60 hover:bg-[#3b82f6] hover:text-white hover:border-[#3b82f6] transition-all duration-300"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.label}
+                    className="w-10 h-10 border border-white/15 rounded-full flex items-center justify-center text-white/60 hover:bg-[#3b82f6] hover:text-white hover:border-[#3b82f6] transition-all duration-300"
                   >
-                    {social}
+                    {social.icon}
                   </a>
                 ))}
               </div>
